@@ -12,3 +12,10 @@
 .env
 /snapshots/
 *-
+*.bbl
+*.out
+*.blg
+*.bst
+*.aux
+
+*.cls
