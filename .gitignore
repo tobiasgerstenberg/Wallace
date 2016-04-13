@@ -12,3 +12,4 @@
 .env
 /snapshots/
 *-
+docs/_build/*
