@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Required experimental files &mdash; Wallace</title>
+
+    
+      <link rel="shortcut icon" href="../img/favicon.ico">
+    
+
+    <link rel="stylesheet" href="../css/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../css/alabaster-overrides.css" type="text/css" />
+
+    
+
+    
+
+    
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+    
+  
+</head>
+<body role="document">
+
+  <div class="document">
+    <div class="documentwrapper">
+      <div class="bodywrapper">
+        <div class="body" role="main">
+          
+            <p>Wallace is flexible with regards to the form the front end takes. However, there are a number of required or forbidden files. You can verify that a directory is compatible by running <a href="https://github.com/berkeley-cocosci/Wallace/wiki/Command-line-utility#verify"><code>wallace verify</code></a> from a terminal within the directory. Though just because these checks pass doesn't mean the experiment will run! The minimal required structure is as follows:</p>
+<p><img alt="" src="https://github.com/suchow/Wallace/blob/master/wiki/images/directories.jpg" /></p>
+<p>Blue items are (optional) directories (note that the experiment directory can have any name), green items are required files (the README file can be either a txt file or a md file), and red items are forbidden files that will cause a conflict at run time. </p>
+<h4 id="required-files">Required files</h4>
+<ul>
+<li>
+<p>config.txt - The config file contains a variety of parameters that affect how Wallace runs. For more info see...</p>
+</li>
+<li>
+<p>experiment.py - This is a python file containing the custom experiment code.</p>
+</li>
+<li>
+<p>README.txt/md - This (hopefully) contains a helpful description of the experiment.</p>
+</li>
+</ul>
+<h4 id="forbidden-files">Forbidden files</h4>
+<p>A number of files cannot be included in the experiment directory. This is because, when Wallace runs, it inserts a number of required files into the experiment directory and will overwrite any files with the same name. The files are as follows:</p>
+<ul>
+<li>complete.html - this html page shows when wallace is run in debug mode and the experiment is complete.</li>
+<li>error_wallace.html - this is a flexible error page that shows when something goes wrong.</li>
+<li>launch.html - this page is shown when the /launch route is pinged and the experiment starts successfully.</li>
+<li>robots.txt - this file is returned to bots (e.g. from google) that bump into the experiment when crawling the internet.</li>
+<li>wallace.js - this is a javascript library with a number of helpful functions.</li>
+<li><a href="https://github.com/ded/reqwest">reqwest.min.js</a> - this is required for wallace.js to work.</li>
+<li>wallace.css - this contains several css classes that are used in the examples.</li>
+</ul>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebarwrapper">
+        
+  <h1 class="logo"><a href="..">Wallace</a></h1>
+
+
+
+        
+          
+
+
+
+<h3>Table Of Contents</h3>
+
+<nav>
+  
+  
+    <ul>
+    
+  </ul>
+  
+    <ul>
+    
+  </ul>
+  
+
+  
+</nav>
+          
+  <h3>Related Topics</h3>
+  <ul>
+    
+      <li>Previous: <a href="../Monitoring-a-live-experiment/" title="previous chapter">
+        Monitoring a live experiment
+      </a></li>
+    
+    
+      <li>Next: <a href="../Setting-up-AWS,-psiTurk,-MTurk,-and-Heroku/" title="next chapter">
+        Setting up AWS, psiTurk, MTurk, and Heroku
+      </a></li>
+    
+  </ul>
+
+        
+        <div id="searchbox" style="display: none;" role="search">
+  <h3>Quick search</h3>
+  <form class="search" action="../search.html" method="get">
+    <input name="q" type="text">
+    <input value="Go" type="submit">
+  </form>
+  <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+  </p>
+</div>
+<script type="text/javascript">
+  document.getElementById("searchbox").style.display = "block";
+</script>
+      </div>
+    </div>
+    <div class="clearer"></div>
+  </div>
+
+  
+    <div class="footer">
+      
+      
+        
+        Powered by <a href="http://www.mkdocs.org">MkDocs 0.15.3</a>
+        &amp; <a href="https://github.com/iamale/mkdocs-alabaster">Alabaster</a>
+      
+    </div>
+  
+
+  <!--
+  MkDocs version      : 0.15.3
+  Docs Build Date UTC : 2016-07-27 22:40:11.043509
+  -->
+</body>
+</html>

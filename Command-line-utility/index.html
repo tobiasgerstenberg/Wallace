@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Command line utility &mdash; Wallace</title>
+
+    
+      <link rel="shortcut icon" href="../img/favicon.ico">
+    
+
+    <link rel="stylesheet" href="../css/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../css/alabaster-overrides.css" type="text/css" />
+
+    
+
+    
+
+    
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+    
+  
+</head>
+<body role="document">
+
+  <div class="document">
+    <div class="documentwrapper">
+      <div class="bodywrapper">
+        <div class="body" role="main">
+          
+            <p>Wallace is executed from the command line within the experiment directory with the following commands: <br />
+<em> <a href="#verify"><code>wallace verify</code></a>
+</em> <a href="#debug"><code>wallace debug</code></a>
+<em> <a href="#sandbox"><code>wallace sandbox</code></a>
+</em> <a href="#deploy"><code>wallace deploy</code></a>
+<em> <a href="#logs"><code>wallace logs</code></a>
+</em> <a href="#status"><code>wallace status</code></a>
+<em> <a href="#export"><code>wallace export</code></a>
+</em> <a href="#summary"><code>wallace summary</code></a>
+<em> <a href="#qualify"><code>wallace qualify</code></a>
+</em> <a href="#hibernate"><code>wallace hibernate</code></a>
+<em> <a href="#awaken"><code>wallace awaken</code></a>
+</em> <a href="#create"><code>wallace create</code></a></p>
+<h4 id="verify">verify</h4>
+<p>Verifies that a directory is a Wallace-compatible app.</p>
+<h4 id="debug">debug</h4>
+<p><code>--verbose</code> <br />
+Runs the experiment locally. If <code>--verbose</code> is included more detailed logs are printed to the command line.</p>
+<h4 id="sandbox">sandbox</h4>
+<p><code>--verbose</code> <br />
+<code>--app &lt;name&gt;</code> <br />
+Runs the experiment on MTurk's sandbox using Heroku as a server. If <code>--verbose</code> is included more detailed logs are printed to the command line. If <code>--app</code> is specified the app on heroku will have that name.</p>
+<h4 id="deploy">deploy</h4>
+<p><code>--verbose</code> <br />
+<code>--app &lt;name&gt;</code> <br />
+Runs the experiment live on MTurk using Heroku as a server. If <code>--verbose</code> is included more detailed logs are printed to the command line. If <code>--app</code> is specified the app on heroku will have that name.</p>
+<h4 id="logs">logs</h4>
+<p><code>--app &lt;app&gt;</code> <br />
+Opens the app's logs in Papertrail.</p>
+<h4 id="status">status</h4>
+<p>Returns the status of an experiment.</p>
+<h4 id="export">export</h4>
+<p>Downloads the database and partial server logs to a zipped folder within the data directory of the experimental folder. Databases are stored in csv format.</p>
+<h4 id="summary">summary</h4>
+<p><code>--app &lt;app-id&gt;</code> <br />
+Prints a summary of the participant table to the command line. You must specify the app id.</p>
+<h4 id="qualify">qualify</h4>
+<p><code>--qualification &lt;qualification_id&gt;</code> <br />
+<code>--value &lt;value&gt;</code> <br />
+<code>--worker &lt;worker_id&gt;</code> <br />
+Assigns qualification <code>qualification_id</code> with value <code>value</code> to worker <code>worker_id</code>. This is useful when compensating workers if something goes wrong with the experiment.</p>
+<h4 id="hibernate">hibernate</h4>
+<p><code>--app &lt;app&gt;</code> <br />
+Temporarily scales down the specified app to save money. All dynos are removed and so are many of the add-ons. Hibernating apps are non-functional. It is likely that the app will not be entirely free while hibernating. To restore the app use <code>awaken</code>.</p>
+<h4 id="awaken">awaken</h4>
+<p><code>--app &lt;app&gt;</code> <br />
+Retore a hibernating app.</p>
+<h4 id="create">create</h4>
+<p><code>--example &lt;demo&gt;</code> <br />
+Copies the <code>&lt;demo&gt;</code> experiment from the examples directory to the command line location. <code>&lt;demo&gt;</code> must be the name of a directory with the examples directory. The default is <code>bartlett1932</code>.</p>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebarwrapper">
+        
+  <h1 class="logo"><a href="..">Wallace</a></h1>
+
+
+
+        
+          
+
+
+
+<h3>Table Of Contents</h3>
+
+<nav>
+  
+  
+    <ul>
+    
+  </ul>
+  
+    <ul>
+    
+  </ul>
+  
+    <ul>
+    
+  </ul>
+  
+    <ul>
+    
+  </ul>
+  
+    <ul>
+    
+  </ul>
+  
+    <ul>
+    
+  </ul>
+  
+    <ul>
+    
+  </ul>
+  
+    <ul>
+    
+  </ul>
+  
+    <ul>
+    
+  </ul>
+  
+    <ul>
+    
+  </ul>
+  
+    <ul>
+    
+  </ul>
+  
+    <ul>
+    
+  </ul>
+  
+
+  
+</nav>
+          
+  <h3>Related Topics</h3>
+  <ul>
+    
+      <li>Previous: <a href="../Classes/" title="previous chapter">
+        Classes
+      </a></li>
+    
+    
+      <li>Next: <a href="../Communicating-with-the-server/" title="next chapter">
+        Communicating with the server
+      </a></li>
+    
+  </ul>
+
+        
+        <div id="searchbox" style="display: none;" role="search">
+  <h3>Quick search</h3>
+  <form class="search" action="../search.html" method="get">
+    <input name="q" type="text">
+    <input value="Go" type="submit">
+  </form>
+  <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+  </p>
+</div>
+<script type="text/javascript">
+  document.getElementById("searchbox").style.display = "block";
+</script>
+      </div>
+    </div>
+    <div class="clearer"></div>
+  </div>
+
+  
+    <div class="footer">
+      
+      
+        
+        Powered by <a href="http://www.mkdocs.org">MkDocs 0.15.3</a>
+        &amp; <a href="https://github.com/iamale/mkdocs-alabaster">Alabaster</a>
+      
+    </div>
+  
+
+  <!--
+  MkDocs version      : 0.15.3
+  Docs Build Date UTC : 2016-07-27 22:40:10.936248
+  -->
+</body>
+</html>

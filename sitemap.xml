@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    <url>
+     <loc>None/</loc>
+     <lastmod>2016-07-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/Classes/</loc>
+     <lastmod>2016-07-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/Command-line-utility/</loc>
+     <lastmod>2016-07-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/Communicating-with-the-server/</loc>
+     <lastmod>2016-07-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/Developing-Wallace-(setup-guide)/</loc>
+     <lastmod>2016-07-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/Installing-Wallace-(for-users)/</loc>
+     <lastmod>2016-07-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/Learning-to-use-Wallace/</loc>
+     <lastmod>2016-07-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/Monitoring-a-live-experiment/</loc>
+     <lastmod>2016-07-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/Required-experimental-files/</loc>
+     <lastmod>2016-07-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/Setting-up-AWS,-psiTurk,-MTurk,-and-Heroku/</loc>
+     <lastmod>2016-07-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/The-Experiment-class/</loc>
+     <lastmod>2016-07-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/Using-Postico-to-examine-a-Postgres-database/</loc>
+     <lastmod>2016-07-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/Wallace,-the-scientist/</loc>
+     <lastmod>2016-07-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/Wallace-with-Anaconda/</loc>
+     <lastmod>2016-07-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/Web-API/</loc>
+     <lastmod>2016-07-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+</urlset>
