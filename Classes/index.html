@@ -1,327 +1,398 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
+<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
-    <link rel="shortcut icon" href="../img/favicon.ico">
-
-    <title>Classes - Wallace</title>
-
-    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
-    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
-    <link href="../css/base.css" rel="stylesheet">
-    <link href="../css/cinder.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/highlight.css">
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
-    <script>
-    WebFont.load({
-        google: {
-            families: ['Open Sans', 'PT Sans']
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    
+      
+        <title>Classes - Wallace</title>
+      
+      
+      
+      
+    
+    <meta property="og:url" content="None">
+    <meta property="og:title" content="Wallace">
+    <meta property="og:image" content="None/../">
+    <meta name="apple-mobile-web-app-title" content="Wallace">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon-e565ddfa3b.ico">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon-e565ddfa3b.ico">
+    <style>
+      @font-face {
+      	font-family: 'Icon';
+      	src: url('../assets/fonts/icon.eot?52m981');
+      	src: url('../assets/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+      		   url('../assets/fonts/icon.woff?52m981')
+               format('woff'),
+      		   url('../assets/fonts/icon.ttf?52m981')
+               format('truetype'),
+      		   url('../assets/fonts/icon.svg?52m981#icon')
+               format('svg');
+      	font-weight: normal;
+      	font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="../assets/stylesheets/application-a422ff04cc.css">
+    
+    
+      
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu+Mono">
+      <style>
+        body, input {
+          font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
         }
-    });
-    </script>
-
+        pre, code {
+          font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+        }
+      </style>
     
-</head>
-
-<body>
-
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            
-
-            <!-- Main title -->
-            <a class="navbar-brand" href="..">Wallace</a>
-        </div>
-
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-            
-                <!-- Main navigation -->
-                <ul class="nav navbar-nav">
-                
-                
-                    <li >
-                        <a href="..">Home</a>
-                    </li>
-                
-                
-                
-                    <li class="active">
-                        <a href="./">Classes</a>
-                    </li>
-                
-                
-                
-                    <li >
-                        <a href="../Command-line-utility/">Command line utility</a>
-                    </li>
-                
-                
-                
-                    <li >
-                        <a href="../Communicating-with-the-server/">Communicating with the server</a>
-                    </li>
-                
-                
-                
-                    <li >
-                        <a href="../Developing-Wallace-(setup-guide)/">Developing Wallace (setup guide)</a>
-                    </li>
-                
-                
-                
-                    <li >
-                        <a href="../Installing-Wallace-(for-users)/">Installing Wallace (for users)</a>
-                    </li>
-                
-                
-                
-                    <li >
-                        <a href="../Learning-to-use-Wallace/">Learning to use Wallace</a>
-                    </li>
-                
-                
-                
-                    <li >
-                        <a href="../Monitoring-a-live-experiment/">Monitoring a live experiment</a>
-                    </li>
-                
-                
-                
-                    <li >
-                        <a href="../Required-experimental-files/">Required experimental files</a>
-                    </li>
-                
-                
-                
-                    <li >
-                        <a href="../Setting-up-AWS,-psiTurk,-MTurk,-and-Heroku/">Setting up AWS, psiTurk, MTurk, and Heroku</a>
-                    </li>
-                
-                
-                
-                    <li >
-                        <a href="../The-Experiment-class/">The Experiment class</a>
-                    </li>
-                
-                
-                
-                    <li >
-                        <a href="../Using-Postico-to-examine-a-Postgres-database/">Using Postico to examine a Postgres database</a>
-                    </li>
-                
-                
-                
-                    <li >
-                        <a href="../Wallace,-the-scientist/">Wallace, the scientist</a>
-                    </li>
-                
-                
-                
-                    <li >
-                        <a href="../Wallace-with-Anaconda/">Wallace with Anaconda</a>
-                    </li>
-                
-                
-                
-                    <li >
-                        <a href="../Web-API/">Web API</a>
-                    </li>
-                
-                
-                
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Demos <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                        
-                            
-<li >
-    <a href="../demos/bartlett1932/">Bartlett1932</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../demos/chatroom/">Chatroom</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../demos/function-learning/">Function learning</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../demos/mcmcp/">Mcmcp</a>
-</li>
-
-                        
-                            
-<li >
-    <a href="../demos/rogers/">Rogers</a>
-</li>
-
-                        
-                        </ul>
-                    </li>
-                
-                
-                </ul>
-            
-
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                
-                    <li >
-                        <a rel="next" href="..">
-                            <i class="fa fa-arrow-left"></i> Previous
-                        </a>
-                    </li>
-                    <li >
-                        <a rel="prev" href="../Command-line-utility/">
-                            Next <i class="fa fa-arrow-right"></i>
-                        </a>
-                    </li>
-                
-                
-            </ul>
-        </div>
+    
+    <script src="../assets/javascripts/modernizr-4ab42b99fd.js"></script>
+    
+  </head>
+  
+  
+  
+  <body class=" ">
+    
+    <div class="backdrop">
+      <div class="backdrop-paper"></div>
     </div>
-</div>
+    <input class="toggle" type="checkbox" id="toggle-drawer">
+    <input class="toggle" type="checkbox" id="toggle-search">
+    <label class="toggle-button overlay" for="toggle-drawer"></label>
+    <header class="header">
+      <nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        
+          <span class="path">
+            
+          </span>
+        
+        Classes
+      </div>
+    </div>
+    
+    
+    <div class="button button-search" role="button" aria-label="Search">
+      <label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
+    </div>
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+    </header>
+    <main class="main">
+      
+      <div class="drawer">
+        <nav aria-label="Navigation">
+  
+  <a href="/" class="project">
+    <div class="banner">
+      
+      <div class="name">
+        <strong>
+          Wallace
+          <span class="version">
+            
+          </span>
+        </strong>
+        
+      </div>
+    </div>
+  </a>
+  <div class="scrollable">
+    <div class="wrapper">
+      
+      <div class="toc">
+        <ul>
+          
+            
+  <li>
+    <a class="" title="Home" href="..">
+      Home
+    </a>
+    
+  </li>
 
-    <div class="container">
-        
-        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
+          
+            
+  <li>
+    <a class="current" title="Classes" href="./">
+      Classes
+    </a>
     
-        <li class="first-level active"><a href="#network">Network</a></li>
-        
-            <li class="second-level"><a href="#columns">Columns</a></li>
-            
-        
-            <li class="second-level"><a href="#relationships">Relationships</a></li>
-            
-        
-            <li class="second-level"><a href="#functions">Functions</a></li>
-            
-        
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="Network" href="#network">
+                Network
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Node" href="#node">
+                Node
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Vector" href="#vector">
+                Vector
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Info" href="#info">
+                Info
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Transmission" href="#transmission">
+                Transmission
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Transformation" href="#transformation">
+                Transformation
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Participant" href="#participant">
+                Participant
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Question" href="#question">
+                Question
+              </a>
+            </li>
+          
+        </ul>
+      
     
-        <li class="first-level "><a href="#node">Node</a></li>
-        
-            <li class="second-level"><a href="#columns_1">Columns</a></li>
+  </li>
+
+          
             
-        
-            <li class="second-level"><a href="#relationships_1">Relationships</a></li>
-            
-        
-            <li class="second-level"><a href="#methods">Methods</a></li>
-            
-        
+  <li>
+    <a class="" title="Command line utility" href="../Command-line-utility/">
+      Command line utility
+    </a>
     
-        <li class="first-level "><a href="#vector">Vector</a></li>
-        
-            <li class="second-level"><a href="#columns_2">Columns</a></li>
+  </li>
+
+          
             
-        
-            <li class="second-level"><a href="#relationships_2">Relationships</a></li>
-            
-        
-            <li class="second-level"><a href="#methods_1">Methods</a></li>
-            
-        
+  <li>
+    <a class="" title="Communicating with the server" href="../Communicating-with-the-server/">
+      Communicating with the server
+    </a>
     
-        <li class="first-level "><a href="#info">Info</a></li>
-        
-            <li class="second-level"><a href="#columns_3">Columns</a></li>
+  </li>
+
+          
             
-        
-            <li class="second-level"><a href="#relationships_3">Relationships</a></li>
-            
-        
-            <li class="second-level"><a href="#methods_2">Methods</a></li>
-            
-        
+  <li>
+    <a class="" title="Developing Wallace (setup guide)" href="../Developing-Wallace-(setup-guide)/">
+      Developing Wallace (setup guide)
+    </a>
     
-        <li class="first-level "><a href="#transmission">Transmission</a></li>
-        
-            <li class="second-level"><a href="#columns_4">Columns</a></li>
+  </li>
+
+          
             
-        
-            <li class="second-level"><a href="#relationships_4">Relationships</a></li>
-            
-        
-            <li class="second-level"><a href="#methods_3">Methods</a></li>
-            
-        
+  <li>
+    <a class="" title="Installing Wallace (for users)" href="../Installing-Wallace-(for-users)/">
+      Installing Wallace (for users)
+    </a>
     
-        <li class="first-level "><a href="#transformation">Transformation</a></li>
-        
-            <li class="second-level"><a href="#columns_5">Columns</a></li>
+  </li>
+
+          
             
-        
-            <li class="second-level"><a href="#relationships_5">Relationships</a></li>
-            
-        
+  <li>
+    <a class="" title="Learning to use Wallace" href="../Learning-to-use-Wallace/">
+      Learning to use Wallace
+    </a>
     
-        <li class="first-level "><a href="#participant">Participant</a></li>
-        
-            <li class="second-level"><a href="#columns_6">Columns</a></li>
+  </li>
+
+          
             
-        
-            <li class="second-level"><a href="#relationships_6">Relationships</a></li>
-            
-        
-            <li class="second-level"><a href="#methods_4">Methods</a></li>
-            
-        
+  <li>
+    <a class="" title="Monitoring a live experiment" href="../Monitoring-a-live-experiment/">
+      Monitoring a live experiment
+    </a>
     
-        <li class="first-level "><a href="#question">Question</a></li>
-        
-            <li class="second-level"><a href="#columns_7">Columns</a></li>
+  </li>
+
+          
             
-        
-            <li class="second-level"><a href="#relationships_7">Relationships</a></li>
-            
-        
-            <li class="second-level"><a href="#methods_5">Methods</a></li>
-            
-        
+  <li>
+    <a class="" title="Required experimental files" href="../Required-experimental-files/">
+      Required experimental files
+    </a>
     
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Setting up AWS, psiTurk, MTurk, and Heroku" href="../Setting-up-AWS,-psiTurk,-MTurk,-and-Heroku/">
+      Setting up AWS, psiTurk, MTurk, and Heroku
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="The Experiment class" href="../The-Experiment-class/">
+      The Experiment class
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Using Postico to examine a Postgres database" href="../Using-Postico-to-examine-a-Postgres-database/">
+      Using Postico to examine a Postgres database
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Wallace, the scientist" href="../Wallace,-the-scientist/">
+      Wallace, the scientist
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Wallace with Anaconda" href="../Wallace-with-Anaconda/">
+      Wallace with Anaconda
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="Web API" href="../Web-API/">
+      Web API
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <span class="section">Demos</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="Bartlett1932" href="../demos/bartlett1932/">
+      Bartlett1932
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Chatroom" href="../demos/chatroom/">
+      Chatroom
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Function learning" href="../demos/function-learning/">
+      Function learning
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Mcmcp" href="../demos/mcmcp/">
+      Mcmcp
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="Rogers" href="../demos/rogers/">
+      Rogers
+    </a>
+    
+  </li>
+
+      
     </ul>
-</div></div>
-        <div class="col-md-9" role="main">
+  </li>
 
-<p>The classes involved in a Wallace experiment are: <a href="https://github.com/suchow/Wallace/wiki/Classes#network">Network</a>, <a href="https://github.com/suchow/Wallace/wiki/Classes#node">Node</a>, <a href="https://github.com/suchow/Wallace/wiki/Classes#vector">Vector</a>, <a href="https://github.com/suchow/Wallace/wiki/Classes#info">Info</a>, <a href="https://github.com/suchow/Wallace/wiki/Classes#transmission">Transmission</a>, <a href="https://github.com/suchow/Wallace/wiki/Classes#transformation">Transformation</a>, <a href="https://github.com/suchow/Wallace/wiki/Classes#participant">Participant</a> and <a href="https://github.com/suchow/Wallace/wiki/Classes#question">Question</a>. The code for all these classes can be seen in models.py. All of the classes have a corresponding table in the database, with each instance stored as a row in the relevant table. Accordingly, each class is defined, in part, by the columns that constitute the table it is stored in. In addition, the classes have relationships to other objects and a number of functions.</p>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+      </div>
+      <article class="article">
+        <div class="wrapper">
+          
+            <h1>Classes</h1>
+          
+          <p>The classes involved in a Wallace experiment are: <a href="https://github.com/suchow/Wallace/wiki/Classes#network">Network</a>, <a href="https://github.com/suchow/Wallace/wiki/Classes#node">Node</a>, <a href="https://github.com/suchow/Wallace/wiki/Classes#vector">Vector</a>, <a href="https://github.com/suchow/Wallace/wiki/Classes#info">Info</a>, <a href="https://github.com/suchow/Wallace/wiki/Classes#transmission">Transmission</a>, <a href="https://github.com/suchow/Wallace/wiki/Classes#transformation">Transformation</a>, <a href="https://github.com/suchow/Wallace/wiki/Classes#participant">Participant</a> and <a href="https://github.com/suchow/Wallace/wiki/Classes#question">Question</a>. The code for all these classes can be seen in models.py. All of the classes have a corresponding table in the database, with each instance stored as a row in the relevant table. Accordingly, each class is defined, in part, by the columns that constitute the table it is stored in. In addition, the classes have relationships to other objects and a number of functions.</p>
 <p>The classes have relationships to each other as shown in the diagram below (be careful about which way the arrows point). A Node is a point in a Network that might be associated with a Participant. A Vector is a directional connection between two Nodes. An Info is a piece of information created by a Node. A Transmission is an instance of an Info being sent along a Vector. A Transformation is a relationship between two Infos. A Question is a piece of information created by a Participant.</p>
 <p><img alt="" src="https://github.com/suchow/Wallace/blob/master/wiki/images/class%20chart.jpg" /></p>
 <h3 id="network">Network</h3>
@@ -641,53 +712,80 @@ Return a list of questions associated with the participant. If specified, <em>ty
 <p>question<strong>.fail</strong>() <br />
 Set question.failed to True and question.time_of_death to now.</p>
 <hr />
-<hr /></div>
-        
-    </div>
-
-    <footer class="col-md-12 text-center">
-        <hr>
-        <p>
-        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
-    </footer>
-
-    <script src="../js/jquery-1.10.2.min.js"></script>
-    <script src="../js/bootstrap-3.0.3.min.js"></script>
-    <script src="../js/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <script>
-    var base_url = '..';
-    </script>
-    <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
-    <script src="../js/base.js"></script>
-
-    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">
-                        <span aria-hidden="true">&times;</span>
-                        <span class="sr-only">Close</span>
-                    </button>
-                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
-                </div>
-                <div class="modal-body">
-                    <p>
-                        From here you can search these documents. Enter your search terms below.
-                    </p>
-                    <form role="form">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
-                        </div>
-                    </form>
-                    <div id="mkdocs-search-results"></div>
-                </div>
-                <div class="modal-footer">
-                </div>
+<hr />
+          <aside class="copyright" role="note">
+            
+            Documentation built with
+            <a href="http://www.mkdocs.org" target="_blank">MkDocs</a>
+            using the
+            <a href="http://squidfunk.github.io/mkdocs-material/" target="_blank">
+              Material
+            </a>
+            theme.
+          </aside>
+          
+            <footer class="footer">
+              
+  <nav class="pagination" aria-label="Footer">
+    <div class="previous">
+      
+        <a href=".." title="Home">
+          <span class="direction">
+            Previous
+          </span>
+          <div class="page">
+            <div class="button button-previous" role="button" aria-label="Previous">
+              <i class="icon icon-back"></i>
             </div>
-        </div>
+            <div class="stretch">
+              <div class="title">
+                Home
+              </div>
+            </div>
+          </div>
+        </a>
+      
     </div>
+    <div class="next">
+      
+        <a href="../Command-line-utility/" title="Command line utility">
+          <span class="direction">
+            Next
+          </span>
+          <div class="page">
+            <div class="stretch">
+              <div class="title">
+                Command line utility
+              </div>
+            </div>
+            <div class="button button-next" role="button" aria-label="Next">
+              <i class="icon icon-forward"></i>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+  </nav>
 
-    </body>
-
+            </footer>
+          
+        </div>
+      </article>
+      <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+          <div class="wrapper">
+            <div class="meta"></div>
+            <div class="list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      var base_url = '..';
+      var repo_id  = '';
+    </script>
+    <script src="../assets/javascripts/application-997097ee0c.js"></script>
+    
+    
+  </body>
 </html>
