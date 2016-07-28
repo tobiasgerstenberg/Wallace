@@ -1,38 +1,246 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <link rel="shortcut icon" href="../img/favicon.ico">
 
-    <title>Developing Wallace (setup guide) &mdash; Wallace</title>
+    <title>Developing Wallace (setup guide) - Wallace</title>
+
+    <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/font-hack/2.018/css/hack.min.css">
+    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,600,700&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/cinder.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+    WebFont.load({
+        google: {
+            families: ['Open Sans', 'PT Sans']
+        }
+    });
+    </script>
 
     
-      <link rel="shortcut icon" href="../img/favicon.ico">
-    
-
-    <link rel="stylesheet" href="../css/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="../css/alabaster-overrides.css" type="text/css" />
-
-    
-
-    
-
-    
-
-    <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
-    
-  
 </head>
-<body role="document">
 
-  <div class="document">
-    <div class="documentwrapper">
-      <div class="bodywrapper">
-        <div class="body" role="main">
-          
-            <h1 id="getting-started-developing-wallace">Getting Started: Developing Wallace</h1>
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">Wallace</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../Classes/">Classes</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../Command-line-utility/">Command line utility</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../Communicating-with-the-server/">Communicating with the server</a>
+                    </li>
+                
+                
+                
+                    <li class="active">
+                        <a href="./">Developing Wallace (setup guide)</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../Installing-Wallace-(for-users)/">Installing Wallace (for users)</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../Learning-to-use-Wallace/">Learning to use Wallace</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../Monitoring-a-live-experiment/">Monitoring a live experiment</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../Required-experimental-files/">Required experimental files</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../Setting-up-AWS,-psiTurk,-MTurk,-and-Heroku/">Setting up AWS, psiTurk, MTurk, and Heroku</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../The-Experiment-class/">The Experiment class</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../Using-Postico-to-examine-a-Postgres-database/">Using Postico to examine a Postgres database</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../Wallace,-the-scientist/">Wallace, the scientist</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../Wallace-with-Anaconda/">Wallace with Anaconda</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../Web-API/">Web API</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Demos <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../demos/bartlett1932/">Bartlett1932</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../demos/chatroom/">Chatroom</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../demos/function-learning/">Function learning</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../demos/mcmcp/">Mcmcp</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../demos/rogers/">Rogers</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../Communicating-with-the-server/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../Installing-Wallace-(for-users)/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="container">
+        
+        <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="first-level active"><a href="#getting-started-developing-wallace">Getting Started: Developing Wallace</a></li>
+        
+            <li class="second-level"><a href="#install-python-27">Install Python 2.7</a></li>
+            
+        
+            <li class="second-level"><a href="#install-postgres-using-brew">Install Postgres using brew</a></li>
+            
+        
+            <li class="second-level"><a href="#detailed-installation-for-setting-up-virtual-environments-in-which-to-work-on-wallace">Detailed installation for setting up virtual environments in which to work on Wallace.</a></li>
+            
+        
+    
+    </ul>
+</div></div>
+        <div class="col-md-9" role="main">
+
+<h1 id="getting-started-developing-wallace">Getting Started: Developing Wallace</h1>
 <h4 id="install-python-27">Install Python 2.7</h4>
 <p>You will need Python 2.7. You can check what version of Python you have by running:
     <code>python --version</code>
@@ -81,99 +289,53 @@ workon wallace
 <pre><code>python setup.py develop
 </code></pre>
 
-<p>Once that's finished, we need to input the credentials for 3rd party applications including Amazon Web Services (AWS), Amazon Mechanical Turk (AMT), PsiTurk &amp; Heroku. <a href="https://github.com/suchow/Wallace/wiki/Setting-up-AWS,-psiTurk,-MTurk,-and-Heroku">Instructions for this process as it applies to Wallace live at this page.</a></p>
-            
-          
+<p>Once that's finished, we need to input the credentials for 3rd party applications including Amazon Web Services (AWS), Amazon Mechanical Turk (AMT), PsiTurk &amp; Heroku. <a href="https://github.com/suchow/Wallace/wiki/Setting-up-AWS,-psiTurk,-MTurk,-and-Heroku">Instructions for this process as it applies to Wallace live at this page.</a></p></div>
+        
+    </div>
+
+    <footer class="col-md-12 text-center">
+        <hr>
+        <p>
+        <small>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p></small>
+    </footer>
+
+    <script src="../js/jquery-1.10.2.min.js"></script>
+    <script src="../js/bootstrap-3.0.3.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+    var base_url = '..';
+    </script>
+    <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+    <script src="../js/base.js"></script>
+
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        From here you can search these documents. Enter your search terms below.
+                    </p>
+                    <form role="form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                        </div>
+                    </form>
+                    <div id="mkdocs-search-results"></div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-    <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-      <div class="sphinxsidebarwrapper">
-        
-  <h1 class="logo"><a href="..">Wallace</a></h1>
 
+    </body>
 
-
-        
-          
-
-
-
-<h3>Table Of Contents</h3>
-
-<nav>
-  
-  
-    <ul>
-    
-      <li><a href="#install-python-27">Install Python 2.7</a></li>
-      <ul>
-    
-  </ul>
-    
-      <li><a href="#install-postgres-using-brew">Install Postgres using brew</a></li>
-      <ul>
-    
-  </ul>
-    
-      <li><a href="#detailed-installation-for-setting-up-virtual-environments-in-which-to-work-on-wallace">Detailed installation for setting up virtual environments in which to work on Wallace.</a></li>
-      <ul>
-    
-  </ul>
-    
-  </ul>
-  
-
-  
-</nav>
-          
-  <h3>Related Topics</h3>
-  <ul>
-    
-      <li>Previous: <a href="../Communicating-with-the-server/" title="previous chapter">
-        Communicating with the server
-      </a></li>
-    
-    
-      <li>Next: <a href="../Installing-Wallace-(for-users)/" title="next chapter">
-        Installing Wallace (for users)
-      </a></li>
-    
-  </ul>
-
-        
-        <div id="searchbox" style="display: none;" role="search">
-  <h3>Quick search</h3>
-  <form class="search" action="../search.html" method="get">
-    <input name="q" type="text">
-    <input value="Go" type="submit">
-  </form>
-  <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-  </p>
-</div>
-<script type="text/javascript">
-  document.getElementById("searchbox").style.display = "block";
-</script>
-      </div>
-    </div>
-    <div class="clearer"></div>
-  </div>
-
-  
-    <div class="footer">
-      
-      
-        
-        Powered by <a href="http://www.mkdocs.org">MkDocs 0.15.3</a>
-        &amp; <a href="https://github.com/iamale/mkdocs-alabaster">Alabaster</a>
-      
-    </div>
-  
-
-  <!--
-  MkDocs version      : 0.15.3
-  Docs Build Date UTC : 2016-07-28 09:26:28.072283
-  -->
-</body>
 </html>
