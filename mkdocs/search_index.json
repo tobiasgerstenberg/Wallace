@@ -69,6 +69,26 @@
             "location": "/Developing-Wallace-(setup-guide)/#installing-wallace", 
             "text": "Now, navigate to the directory in which you want to house your development work on Wallace. Once you are there, clone the git repository using:  git clone https://github.com/suchow/Wallace  This will create a directory called  Wallace  in your current directory.   Change into your the new directory and make sure you are in your virtual environment before installing the dependencies. If you want to be extra carfeul, run the command  workon wallace , which will ensure that you are in the right virtual environment.  cd Wallace  Now we need to install the dependencies by running the following command:  pip install -r requirements.txt  Then run  setup.py  with the argument  develop :  python setup.py develop  Test that your installation works by running:  wallace --version  Note: if you are using Anaconda and get a long traceback here, please see the special  Anaconda installation instructions .  Once that's finished, we need to input the credentials for 3rd party applications including Amazon Web Services (AWS), Amazon Mechanical Turk (AMT), PsiTurk   Heroku.  Instructions for this process as it applies to Wallace live at this page.", 
             "title": "Installing Wallace"
+        }, 
+        {
+            "location": "/Wallace-with-Anaconda/", 
+            "text": "If you are interested in developing Wallace but already use \nAnaconda\n, you'll need to slightly adapt the standard instructions for Wallace.\n\n\nInstall Wallace\n\n\nYou'll follow all of the \nWallace development installation instructions\n, \nwith the exception of the virtual environment step\n.\n\n\nConfirm Wallace works\n\n\nNow, we need to make sure that Wallace and Anaconda play nice with one another. At this point, we'd check to make sure that Wallace is properly installed by typing\n\n\nwallace --version\n\n\n\n\ninto the command line. For those of us with Anaconda, we'll get a long error message. Don't panic! Add the following to your \n.bash_profile\n:\n\n\nexport DYLD_FALLBACK_LIBRARY_PATH=$HOME/anaconda/lib/:$DYLD_FALLBACK_LIBRARY_PATH\n\n\n\n\nAfter you \nsource\n your \n.bash_profile\n, you can check your Wallace version (using the same command that we used earlier), which should return the Wallace version that you've installed.\n\n\nRe-link \nopenssl\n\n\nFinally, you'll need to re-link \nopenssl\n. Run the following:\n\n\nbrew install --upgrade openssl\nbrew unlink openssl \n brew link openssl --force", 
+            "title": "For Anaconda users"
+        }, 
+        {
+            "location": "/Wallace-with-Anaconda/#install-wallace", 
+            "text": "You'll follow all of the  Wallace development installation instructions ,  with the exception of the virtual environment step .", 
+            "title": "Install Wallace"
+        }, 
+        {
+            "location": "/Wallace-with-Anaconda/#confirm-wallace-works", 
+            "text": "Now, we need to make sure that Wallace and Anaconda play nice with one another. At this point, we'd check to make sure that Wallace is properly installed by typing  wallace --version  into the command line. For those of us with Anaconda, we'll get a long error message. Don't panic! Add the following to your  .bash_profile :  export DYLD_FALLBACK_LIBRARY_PATH=$HOME/anaconda/lib/:$DYLD_FALLBACK_LIBRARY_PATH  After you  source  your  .bash_profile , you can check your Wallace version (using the same command that we used earlier), which should return the Wallace version that you've installed.", 
+            "title": "Confirm Wallace works"
+        }, 
+        {
+            "location": "/Wallace-with-Anaconda/#re-link-openssl", 
+            "text": "Finally, you'll need to re-link  openssl . Run the following:  brew install --upgrade openssl\nbrew unlink openssl   brew link openssl --force", 
+            "title": "Re-link openssl"
         }
     ]
 }
