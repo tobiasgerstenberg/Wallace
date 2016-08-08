@@ -223,7 +223,27 @@
         {
             "location": "/demos/bartlett1932/", 
             "text": "This is the readme for Bartlett's 1932 experiment on iterated learning. It used 'The War of the Ghosts' story.\n\n\nBartlett, F. C. (1932). Remembering. Cambridge: Cambridge University Press.", 
-            "title": "Bartlett (1932)"
+            "title": "War of the Ghosts"
+        }, 
+        {
+            "location": "/demos/function-learning/", 
+            "text": "This is the readme for Kalish et al. (2007), a paper on iterated function learning.\n\n\nKalish, M. L., Griffiths, T. L., \n Lewandowsky, S. (2007). Iterated learning: Intergenerational knowledge transmission reveals inductive biases. Psychonomic Bulletin and Review, 14, 288-294.", 
+            "title": "Transmitting functions"
+        }, 
+        {
+            "location": "/demos/mcmcp/", 
+            "text": "This is the readme for Bartlett's 1932 experiment on iterated learning. It used 'The War of the Ghosts' story.\n\n\nBartlett, F. C. (1932). Remembering. Cambridge: Cambridge University Press.", 
+            "title": "Markov chain monte carlo with people"
+        }, 
+        {
+            "location": "/demos/chatroom/", 
+            "text": "This is a networked coordination game where players broadcast messages to eachother and try to make the same decision as others.", 
+            "title": "Chatroom-based coordination game"
+        }, 
+        {
+            "location": "/demos/rogers/", 
+            "text": "This is the readme for the Wallace demo Rogers. It explores the evolution of asocial learning and unguided social learning in the context of a numerical discrimination task.", 
+            "title": "Rogers paradox"
         }, 
         {
             "location": "/Required-experimental-files/", 

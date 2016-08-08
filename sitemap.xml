@@ -73,6 +73,30 @@
      <changefreq>daily</changefreq>
     </url>
         
+    <url>
+     <loc>None/demos/function-learning/</loc>
+     <lastmod>2016-08-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/demos/mcmcp/</loc>
+     <lastmod>2016-08-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/demos/chatroom/</loc>
+     <lastmod>2016-08-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/demos/rogers/</loc>
+     <lastmod>2016-08-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
