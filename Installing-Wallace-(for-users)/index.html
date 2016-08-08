@@ -7,14 +7,14 @@
         
         
         
-        <link rel="shortcut icon" href="./img/favicon.ico">
+        <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>Wallace</title>
+	<title>Users - Wallace</title>
 
-        <link href="./css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="./css/font-awesome-4.0.3.css" rel="stylesheet">
-        <link rel="stylesheet" href="./css/highlight.css">
-        <link href="./css/base.css" rel="stylesheet">
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../css/base.css" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -41,7 +41,7 @@
             </button>
 
             <!-- Main title -->
-            <a class="navbar-brand" href=".">Wallace</a>
+            <a class="navbar-brand" href="..">Wallace</a>
         </div>
 
         <!-- Expanded navigation -->
@@ -50,19 +50,19 @@
             <ul class="nav navbar-nav">
             
             
-                <li class="active">
-                    <a href=".">Introduction</a>
+                <li >
+                    <a href="..">Introduction</a>
                 </li>
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Installation <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         
-<li >
-    <a href="Installing-Wallace-(for-users)/">Users</a>
+<li class="active">
+    <a href="./">Users</a>
 </li>
 
                     
@@ -79,13 +79,13 @@
                         <i class="fa fa-search"></i> Search
                     </a>
                 </li>
-                <li class="disabled">
-                    <a rel="next" >
+                <li >
+                    <a rel="next" href="..">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
-                <li >
-                    <a rel="prev" href="Installing-Wallace-(for-users)/">
+                <li class="disabled">
+                    <a rel="prev" >
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -99,20 +99,53 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#wallace">Wallace</a></li>
+        <li class="main active"><a href="#install-python">Install Python</a></li>
         
-            <li><a href="#an-automated-platform-for-online-experimental-evolution">An automated platform for online, experimental evolution</a></li>
+    
+        <li class="main "><a href="#install-postgres">Install Postgres</a></li>
+        
+    
+        <li class="main "><a href="#create-the-database">Create the Database</a></li>
+        
+    
+        <li class="main "><a href="#install-wallace">Install Wallace</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h3 id="wallace">Wallace</h3>
-<h6 id="an-automated-platform-for-online-experimental-evolution">An automated platform for online, experimental evolution</h6>
-<p>Want to take Wallace for a test drive? Start <a href="https://github.com/suchow/Wallace/wiki/Installing-Wallace-(for-users)">here</a>.</p>
-<p>Want to learn more? Try <a href="https://github.com/berkeley-cocosci/Wallace/wiki/Learning-to-use-Wallace">here</a>.</p>
-<p>Feel like contributing to Wallace? Great! Start <a href="https://github.com/suchow/Wallace/wiki/Developing-Wallace-(setup-guide)">here</a>.</p></div>
+<p><em>If you would like to contribute to Wallace please follow these <a href="../Installing-Wallace-(for-developers)">alternative install instructions</a>.</em></p>
+<h4 id="install-python">Install Python</h4>
+<p>Wallace is written in the language Python. For it to work you will need to have Python 2.7 installed. You can check what version of Python you have by running:</p>
+<pre><code>python --version
+</code></pre>
+
+<p>If you do not have Python 2.7 installed, you can install it from the [Python website] (https://www.python.org/downloads/). </p>
+<h4 id="install-postgres">Install Postgres</h4>
+<p>Wallace uses Postgres to create local databases. Install Postgres from <a href="http://postgresapp.com">postgresapp.com</a>. This will require downloading a zip file, unzipping the file and installing the unzipped application. </p>
+<p>You will then need to add Postgres to your PATH environmental variable. If you use the default location for installing applications on OS X (namely <code>/Applications</code>), you can adjust your path by running the following command:</p>
+<pre><code>export PATH=&quot;/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH&quot;
+</code></pre>
+
+<p>NB: If you have installed a more recent version of Postgres (e.g., the <a href="https://github.com/PostgresApp/PostgresApp/releases/tag/9.4rc1">the upcoming version 9.4</a>) you may need to alter that command slightly to accommodate the more recent version number. If you need to – or want to – double check which version to include, then run:    </p>
+<pre><code>ls /Applications/Postgres.app/Contents/Versions/
+</code></pre>
+
+<p>Whatever number that returns is the version number that you should place in the <code>export</code> command above. If it does not return a number, you have not installed Postgres correctly in your /Applications folder or something else is horribly wrong.</p>
+<h4 id="create-the-database">Create the Database</h4>
+<p>After installing Postgres, you will need to create a database for your experiment to use. Run the following command from the comand line:</p>
+<pre><code>psql -c 'create database wallace;' -U postgres
+</code></pre>
+
+<h4 id="install-wallace">Install Wallace</h4>
+<p>Install Wallace from the terminal by running</p>
+<pre><code>pip install wallace
+</code></pre>
+
+<p>Test that your installation works by running:</p>
+<pre><code>wallace --version
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">
@@ -121,12 +154,12 @@
             <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
         </footer>
 
-        <script src="./js/jquery-1.10.2.min.js"></script>
-        <script src="./js/bootstrap-3.0.3.min.js"></script>
-        <script src="./js/highlight.pack.js"></script>
-        <script>var base_url = '.';</script>
-        <script data-main="./mkdocs/js/search.js" src="./mkdocs/js/require.js"></script>
-        <script src="./js/base.js"></script>
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
             <div class="modal-dialog">
