@@ -34,23 +34,24 @@
       <div class="bodywrapper">
         <div class="body" role="main">
           
-            <h1 id="getting-started-developing-wallace">Getting Started: Developing Wallace</h1>
+            <h1 id="developers-installation-of-wallace">Developer's installation of Wallace</h1>
 <h4 id="install-python-27">Install Python 2.7</h4>
 <p>You will need Python 2.7. You can check what version of Python you have by running:
     <code>python --version</code>
-If you do not have Python 2.7 installed, you can install it from the [Python website] (https://www.python.org/downloads/).</p>
-<p>Or, if you know <code>brew</code>:</p>
+If you do not have Python 2.7 installed, you can install it from the <a href="https://www.python.org/downloads/">Python website</a>.</p>
+<p>Or, if you use Homebrew:</p>
 <pre><code>brew install python
 </code></pre>
 
-<p>If you have Python 3.x installed and and symlinked to the command <code>python</code> you will need to create a <code>virtualenv</code> that interprets the code as <code>python2.7</code> (because of compatibility with the <code>psiturk</code> module). Fortunately, we will be creating a virtual environment anyway, so as long as you run <code>brew install python</code> and you don't run into any errors because of your symlinks then you can just proceed with the instructions. If you do run into any errors, may god have pity on your soul (or your python installation… whichever proves to be easier). </p>
+<p>If you have Python 3.x installed and and symlinked to the command <code>python</code>, you will need to create a <code>virtualenv</code> that interprets the code as <code>python2.7</code> (for compatibility with the <code>psiturk</code> module). Fortunately, we will be creating a virtual environment anyway, so as long as you run <code>brew install python</code> and you don't run into any errors because of your symlinks, then you can proceed with the instructions. If you do run into any errors, good luck, we're rooting for you. </p>
 <h4 id="install-postgres-using-brew">Install Postgres using <code>brew</code></h4>
+<p>Intall postgres using homebrew:</p>
 <pre><code>brew install postgres
 </code></pre>
 
 <hr />
-<h4 id="setting-up-a-virtual-environment">Setting up a virtual environment</h4>
-<p>If you would like to develop Wallace (or if you primarily use Python3), you will need to set up a virtual environment (you only need to run these commands once):</p>
+<h4 id="set-up-a-virtual-environment">Set up a virtual environment</h4>
+<p>Set up a virtual environment by running the following commands:</p>
 <pre><code>pip install virtualenv
 pip install virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
@@ -59,28 +60,28 @@ source $(which virtualenvwrapper.sh)
 mkvirtualenv wallace --python /usr/local/bin/python2.7
 </code></pre>
 
-<p>These commands use <code>pip</code> the python package manager to install two packages <code>virtualenv</code> and <code>virtualenvwrapper</code>. They set up an environmental variable named <code>WORKON_HOME</code> with a string that gives a path to a subfolder of your home directory (<code>~</code>) called <code>Envs</code>, which the next command (<code>mkdir</code>) then makes according to the path described in <code>$WORKON_HOME</code> (recursively, due to the <code>-p</code> flag). That is where your environments will be stored. The <code>source</code> command will run the command that follows, which in this case locates the the <code>virtualenvwrapper.sh</code> shell script the contents of which are beyond the scope of this setup tutorial. If you want to know what it does a more in depth description can be found at <a href="http://virtualenvwrapper.readthedocs.org/en/latest/install.html#python-interpreter-virtualenv-and-path">this page on <code>virtualenvwrapper.sh</code></a>. Finally the <code>mkvirtualenv</code> makes your first virtual environment which you've named <code>wallace</code>. We have explicitly passed it the location of <code>python2.7</code> so that even if your <code>python</code> command has been remapped to <code>python3</code> it will create the environment with <code>python2.7</code> as its interpreter.</p>
+<p>These commands use <code>pip</code>, the Python package manager, to install two packages <code>virtualenv</code> and <code>virtualenvwrapper</code>. They set up an environmental variable named <code>WORKON_HOME</code> with a string that gives a path to a subfolder of your home directory (<code>~</code>) called <code>Envs</code>, which the next command (<code>mkdir</code>) then makes according to the path described in <code>$WORKON_HOME</code> (recursively, due to the <code>-p</code> flag). That is where your environments will be stored. The <code>source</code> command will run the command that follows, which in this case locates the <code>virtualenvwrapper.sh</code> shell script, the contents of which are beyond the scope of this setup tutorial. If you want to know what it does, a more in depth description can be found at <a href="http://virtualenvwrapper.readthedocs.org/en/latest/install.html#python-interpreter-virtualenv-and-path">this page on <code>virtualenvwrapper.sh</code></a>. Finally, the <code>mkvirtualenv</code> makes your first virtual environment which you've named <code>wallace</code>. We have explicitly passed it the location of <code>python2.7</code> so that even if your <code>python</code> command has been remapped to <code>python3</code>, it will create the environment with <code>python2.7</code> as its interpreter.</p>
 <p>In the future, you can work on your virtual environment by running:</p>
 <pre><code>source $(which virtualenvwrapper.sh)
 workon wallace
 </code></pre>
 
-<p>NB: <strong>To stop working on the virtual environment, just run <code>deactivate</code>.</strong> If you ever need to see what environments you have (if you don't remember their names) use the command <code>workon</code> with no arguments</p>
-<h4 id="installing-wallace">Installing Wallace</h4>
-<p>Now, navigate to the directory in which you want to house your development work on Wallace. Once you are there, clone the git repository using:</p>
-<pre><code>git clone https://github.com/suchow/Wallace
+<p>NB: To stop working on the virtual environment, run <code>deactivate</code>. To list all available virtual environments, run <code>workon</code> with no arguments.</p>
+<h4 id="install-wallace">Install Wallace</h4>
+<p>Next, navigate to the directory where you want to house your development work on Wallace. Once there, clone the Git repository using:</p>
+<pre><code>git clone https://github.com/berkeley-cocosci/Wallace
 </code></pre>
 
 <p>This will create a directory called <code>Wallace</code> in your current directory. </p>
-<p>Change into your the new directory and make sure you are in your virtual environment before installing the dependencies. If you want to be extra carfeul, run the command <code>workon wallace</code>, which will ensure that you are in the right virtual environment.</p>
+<p>Change into your the new directory and make sure you are still in your virtual environment before installing the dependencies. If you want to be extra carfeul, run the command <code>workon wallace</code>, which will ensure that you are in the right virtual environment.</p>
 <pre><code>cd Wallace
 </code></pre>
 
-<p>Now we need to install the dependencies by running the following command:</p>
+<p>Now we need to install the dependencies using pip:</p>
 <pre><code>pip install -r requirements.txt
 </code></pre>
 
-<p>Then run <code>setup.py</code> with the argument <code>develop</code>:</p>
+<p>Next run <code>setup.py</code> with the argument <code>develop</code>:</p>
 <pre><code>python setup.py develop
 </code></pre>
 
@@ -88,8 +89,8 @@ workon wallace
 <pre><code>wallace --version
 </code></pre>
 
-<p><strong>Note: if you are using Anaconda and get a long traceback here, please see the special <a href="../Wallace-with-Anaconda/">Anaconda installation instructions</a>.</strong></p>
-<p>Once that's finished, we need to input the credentials for 3rd party applications including Amazon Web Services (AWS), Amazon Mechanical Turk (AMT), PsiTurk &amp; Heroku. <a href="../Setting-up-AWS,-psiTurk,-MTurk,-and-Heroku">Instructions for this process as it applies to Wallace live at this page.</a></p>
+<p><strong>Note</strong>: if you are using Anaconda and get a long traceback here, please see the special <a href="../Wallace-with-Anaconda/">Anaconda installation instructions</a>.</p>
+<p>Next, you'll need <a href="../AWS-etc-keys/">access keys for AWS, Heroku, etc.</a></p>
             
           
         </div>
@@ -124,12 +125,12 @@ workon wallace
     
   </ul>
     
-      <li><a href="#setting-up-a-virtual-environment">Setting up a virtual environment</a></li>
+      <li><a href="#set-up-a-virtual-environment">Set up a virtual environment</a></li>
       <ul>
     
   </ul>
     
-      <li><a href="#installing-wallace">Installing Wallace</a></li>
+      <li><a href="#install-wallace">Install Wallace</a></li>
       <ul>
     
   </ul>
@@ -186,7 +187,7 @@ workon wallace
 
   <!--
   MkDocs version      : 0.15.3
-  Docs Build Date UTC : 2016-08-08 05:50:10.137551
+  Docs Build Date UTC : 2016-08-08 06:01:35.874642
   -->
 </body>
 </html>

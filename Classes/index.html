@@ -34,9 +34,9 @@
       <div class="bodywrapper">
         <div class="body" role="main">
           
-            <p>The classes involved in a Wallace experiment are: <a href="https://github.com/suchow/Wallace/wiki/Classes#network">Network</a>, <a href="https://github.com/suchow/Wallace/wiki/Classes#node">Node</a>, <a href="https://github.com/suchow/Wallace/wiki/Classes#vector">Vector</a>, <a href="https://github.com/suchow/Wallace/wiki/Classes#info">Info</a>, <a href="https://github.com/suchow/Wallace/wiki/Classes#transmission">Transmission</a>, <a href="https://github.com/suchow/Wallace/wiki/Classes#transformation">Transformation</a>, <a href="https://github.com/suchow/Wallace/wiki/Classes#participant">Participant</a> and <a href="https://github.com/suchow/Wallace/wiki/Classes#question">Question</a>. The code for all these classes can be seen in models.py. All of the classes have a corresponding table in the database, with each instance stored as a row in the relevant table. Accordingly, each class is defined, in part, by the columns that constitute the table it is stored in. In addition, the classes have relationships to other objects and a number of functions.</p>
+            <p>The classes involved in a Wallace experiment are: <a href="https://github.com/berkeley-cocosci/Wallace/wiki/Classes#network">Network</a>, <a href="https://github.com/berkeley-cocosci/Wallace/wiki/Classes#node">Node</a>, <a href="https://github.com/berkeley-cocosci/Wallace/wiki/Classes#vector">Vector</a>, <a href="https://github.com/berkeley-cocosci/Wallace/wiki/Classes#info">Info</a>, <a href="https://github.com/berkeley-cocosci/Wallace/wiki/Classes#transmission">Transmission</a>, <a href="https://github.com/berkeley-cocosci/Wallace/wiki/Classes#transformation">Transformation</a>, <a href="https://github.com/berkeley-cocosci/Wallace/wiki/Classes#participant">Participant</a> and <a href="https://github.com/berkeley-cocosci/Wallace/wiki/Classes#question">Question</a>. The code for all these classes can be seen in models.py. All of the classes have a corresponding table in the database, with each instance stored as a row in the relevant table. Accordingly, each class is defined, in part, by the columns that constitute the table it is stored in. In addition, the classes have relationships to other objects and a number of functions.</p>
 <p>The classes have relationships to each other as shown in the diagram below (be careful about which way the arrows point). A Node is a point in a Network that might be associated with a Participant. A Vector is a directional connection between two Nodes. An Info is a piece of information created by a Node. A Transmission is an instance of an Info being sent along a Vector. A Transformation is a relationship between two Infos. A Question is a piece of information created by a Participant.</p>
-<p><img alt="" src="https://github.com/suchow/Wallace/blob/master/wiki/images/class%20chart.jpg" /></p>
+<p><img alt="" src="https://github.com/berkeley-cocosci/Wallace/blob/master/wiki/images/class%20chart.jpg" /></p>
 <h3 id="network">Network</h3>
 <p>The Network object can be imagined as a set of other objects with some functions that perform operations over those objects. The objects that Networks have direct access to are all the Nodes in the network, the Vectors between those Nodes, Infos created by those Nodes, Transmissions sent along the Vectors by those Nodes and Transformations of those Infos. Participants and Questions do not exist within Networks. An experiment may involve multiple Networks, Transmissions can only occur within networks, not between them.</p>
 <h4 id="columns">Columns</h4>
@@ -574,7 +574,7 @@ Set question.failed to True and question.time_of_death to now.</p>
 
   <!--
   MkDocs version      : 0.15.3
-  Docs Build Date UTC : 2016-08-08 05:50:10.358629
+  Docs Build Date UTC : 2016-08-08 06:01:36.164401
   -->
 </body>
 </html>

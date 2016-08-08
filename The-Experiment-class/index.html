@@ -34,14 +34,14 @@
       <div class="bodywrapper">
         <div class="body" role="main">
           
-            <p>Experiments are designed in Wallace by creating a custom subclass of the base Experiment class. The code for the Experiment class is in experiments.py. Unlike the <a href="https://github.com/suchow/Wallace/wiki/Classes">other classes</a>, each experiment involves only a single Experiment object and it is not stored as an entry in a corresponding table, rather each Experiment is a set of instructions that tell the server what to do with the database when the server receives requests from outside.</p>
+            <p>Experiments are designed in Wallace by creating a custom subclass of the base Experiment class. The code for the Experiment class is in experiments.py. Unlike the <a href="https://github.com/berkeley-cocosci/Wallace/wiki/Classes">other classes</a>, each experiment involves only a single Experiment object and it is not stored as an entry in a corresponding table, rather each Experiment is a set of instructions that tell the server what to do with the database when the server receives requests from outside.</p>
 <h4 id="attributes">Attributes</h4>
 <ul>
 <li>verbose - Boolean, determines whether the experiment logs output when running. Default is True.</li>
 <li>task - String, the name of the experiment. Default is "Experiment title".</li>
 <li>session - session, the experiment's connection to the database.</li>
-<li>practice_repeats - int, the number of practice networks (see <a href="https://github.com/suchow/Wallace/wiki/Classes#columns">Network.role</a>). Default is 0.</li>
-<li>experiment_repeats - int, the number of non practice networks (see <a href="https://github.com/suchow/Wallace/wiki/Classes#columns">Network.role</a>). Default is 0.</li>
+<li>practice_repeats - int, the number of practice networks (see <a href="https://github.com/berkeley-cocosci/Wallace/wiki/Classes#columns">Network.role</a>). Default is 0.</li>
+<li>experiment_repeats - int, the number of non practice networks (see <a href="https://github.com/berkeley-cocosci/Wallace/wiki/Classes#columns">Network.role</a>). Default is 0.</li>
 <li>recruiter - Recruiter, the Wallace class that recruits participants. Default is PsiTurkRecruiter.</li>
 <li>initial_recruitment_size - int, the number of participants requested when the experiment first starts. Default is 1.</li>
 <li>known_classes - dictionary, the classes Wallace can make in response to front-end requests. Experiments can add new classes to this dictionary.</li>
@@ -193,7 +193,7 @@ Overwritable method that runs after a request from the front-end from <em>node</
 
   <!--
   MkDocs version      : 0.15.3
-  Docs Build Date UTC : 2016-08-08 05:50:10.268377
+  Docs Build Date UTC : 2016-08-08 06:01:36.050742
   -->
 </body>
 </html>
