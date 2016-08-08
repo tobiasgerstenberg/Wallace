@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+
+	<title>The Experiment Class - Wallace</title>
+
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <link href="../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="..">Wallace</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="..">Introduction</a>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Installation <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../Installing-Wallace-(for-users)/">For users</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Developing-Wallace-(setup-guide)/">For developers</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../AWS-etc-keys/">Keys for AWS, Heroku, etc.</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Wallace-with-Anaconda/">For users of Anaconda</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usage <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        
+<li >
+    <a href="../Learning-to-use-Wallace/">Learning to use Wallace</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Demoing-Wallace/">Running a demo</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Command-line-utility/">Command-line utility</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Monitoring-a-live-experiment/">Monitoring a live experiment</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Required-experimental-files/">Required experimental files</a>
+</li>
+
+                    
+                        
+<li class="active">
+    <a href="./">The Experiment Class</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Postico-and-Postgres/">Examining the database</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Classes/">Classes</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Web-API/">Web API</a>
+</li>
+
+                    
+                        
+<li >
+    <a href="../Communicating-with-the-server/">Communicating with the server</a>
+</li>
+
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                <li >
+                    <a rel="next" href="../Required-experimental-files/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../Postico-and-Postgres/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#attributes">Attributes</a></li>
+        
+    
+        <li class="main "><a href="#functions">Functions</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<p>Experiments are designed in Wallace by creating a custom subclass of the base Experiment class. The code for the Experiment class is in experiments.py. Unlike the <a href="https://github.com/suchow/Wallace/wiki/Classes">other classes</a>, each experiment involves only a single Experiment object and it is not stored as an entry in a corresponding table, rather each Experiment is a set of instructions that tell the server what to do with the database when the server receives requests from outside.</p>
+<h4 id="attributes">Attributes</h4>
+<ul>
+<li>verbose - Boolean, determines whether the experiment logs output when running. Default is True.</li>
+<li>task - String, the name of the experiment. Default is "Experiment title".</li>
+<li>session - session, the experiment's connection to the database.</li>
+<li>practice_repeats - int, the number of practice networks (see <a href="https://github.com/suchow/Wallace/wiki/Classes#columns">Network.role</a>). Default is 0.</li>
+<li>experiment_repeats - int, the number of non practice networks (see <a href="https://github.com/suchow/Wallace/wiki/Classes#columns">Network.role</a>). Default is 0.</li>
+<li>recruiter - Recruiter, the Wallace class that recruits participants. Default is PsiTurkRecruiter.</li>
+<li>initial_recruitment_size - int, the number of participants requested when the experiment first starts. Default is 1.</li>
+<li>known_classes - dictionary, the classes Wallace can make in response to front-end requests. Experiments can add new classes to this dictionary.</li>
+</ul>
+<h4 id="functions">Functions</h4>
+<p>experiment<strong>.__init__</strong>(<em>session</em>) <br />
+Create the experiment class. Sets the value of attributes, see above.</p>
+<p>experiment<strong>.add_node_to_network</strong>(<em>node, network</em>) <br />
+Pass the <em>node</em> to <em>network.add_node()</em>.</p>
+<p>experiment<strong>.assignment_abandoned</strong>(<em>participant</em>) <br />
+Runs when a notification from AWS is received indicating that <em>participant</em> has run out of time. Calls fail_participant.</p>
+<p>experiment<strong>.assignment_returned</strong>(<em>participant</em>) <br />
+Runs when a notification from AWS is received indicating that <em>participant</em> has returned the experiment assignment. Calls fail_participant.</p>
+<p>experiment<strong>.attention_check</strong>(<em>participant</em>) <br />
+Return a boolean value indicating whether the <em>participant</em>'s data is acceptable. This is mean to check the participant's data to determine that they paid attention. This check will run once the <em>participant</em> completes the experiment. By default performs no checks and returns True. See also experiment.data_check().</p>
+<p>experiment<strong>.attention_check_failed</strong>(<em>participant</em>) <br />
+Runs when <em>participant</em> has failed the attention_check. By default calls fail_participant.</p>
+<p>experiment<strong>.bonus</strong>(<em>participant</em>) <br />
+Return the value of the bonus to be paid to <em>participant</em>. By default returns 0.</p>
+<p>experiment<strong>.bonus_reason</strong>(<em>participant</em>)
+Return a string that will be included in an email sent to the <em>participant</em> receiving a bonus. By default it is "Thank you for participant! Here is your bonus."</p>
+<p>experiment<strong>.create_network</strong>()
+Return a new network. By default, the type of network is determined by experiment.network_type(). If the experiment uses networks of different types, or needs to pass argument to the network's <strong>init</strong>() method, this function should be overwritten. Otherwise, it is simpler to overwrite network_type().</p>
+<p>experiment<strong>.create_node</strong>(<em>participant, network</em>)
+Return a new node associated with the <em>participant</em> and in <em>network</em>. By default, the type of node is determined by experiment.node_type(). If the experiment uses nodes of different types, or needs to pass argument to the node's <strong>init</strong>() method, this function should be overwritten. Otherwise, it is simpler to overwrite node_type().</p>
+<p>experiment<strong>.data_check</strong>(<em>participant</em>) <br />
+Return a boolean value indicating whether the <em>participant</em>'s data is acceptable. This is meant to check for missing or invalid data. This check will be run once the <em>participant</em> completes the experiment. By default performs no checks and returns True. See also, experiment.attention_check().</p>
+<p>experiment<strong>.data_check_failed</strong>(<em>participant</em>) <br />
+Runs when <em>participant</em> has failed the data_check. By default calls fail_participant.</p>
+<p>experiment<strong>.fail_participant</strong>(<em>participant</em>) <br />
+Instruct all <em>participant</em>'s unfailed nodes to fail.</p>
+<p>experiment<strong>.get_network_for_participant</strong>(<em>participant</em>) <br />
+Return a network that the <em>participant</em> can join. If not networks are available returns None. By default participants can participate only once in each network and participants first complete networks with role="practice" before doing all other networks in a random order.</p>
+<p>experiment<strong>.info_get_request</strong>(<em>node, infos</em>) <br />
+Overwritable method that runs after a request from the front-end from <em>node</em> to get infos.</p>
+<p>experiment<strong>.info_post_request</strong>(<em>node, info</em>) <br />
+Overwritable method that runs after a request from the front-end from <em>node</em> to make an info.</p>
+<p>experiment<strong>.log</strong>(<em>text, [key, force]</em>) <br />
+Print <em>text</em> to the logs. <em>key</em> will be appended to text. Logging is suppressed if verbose=False, but will still occur if <em>force</em>=True (by default it is False).</p>
+<p>experiment<strong>.log_summary</strong>() <br />
+Print a summary of participant statuses.</p>
+<p>experiment<strong>.networks</strong>(<em>[role, full]</em>) <br />
+Return a list of networks. Can filter by <em>role</em> (String) and <em>full</em> (Boolean), both default to "all".</p>
+<p>experiment<strong>.node_get_request</strong>(<em>participant, [node, nodes]</em>) <br />
+Overwritable method that runs after a request from the front-end from <em>participant</em> to get a node/nodes.</p>
+<p>experiment<strong>.node_post_request</strong>(<em>participant, node</em>) <br />
+Overwritable method that runs after a request from the front-end from <em>participant</em> to make a node.</p>
+<p>experiment<strong>.network_type</strong>() <br />
+Return the class of network to be created. See create_network().</p>
+<p>experiment<strong>.node_type</strong>() <br />
+Return the class of node to be created. See create_node().</p>
+<p>experiment<strong>.recruit</strong>() <br />
+Recruit more participants. This method runs whenever a participant successfully completes the experiment (participants who fail to finish successfully are automatically replaced). By default it recruits 1 participant at a time until all networks are full.</p>
+<p>experiment<strong>.save</strong>(objects) <br />
+Add <em>objects</em> to the database and then commit. This only needs to be done for networks and participants.</p>
+<p>experiment<strong>.setup</strong>() <br />
+Create networks if none are present.</p>
+<p>experiment<strong>.submission_successful</strong>(<em>participant</em>) <br />
+Overwritable method that runs after the <em>participant</em> completes the experiment and passes the data_check and attention_check(). By default does nothing.</p>
+<p>experiment<strong>.transformation_get_request</strong>(<em>node, transformations</em>) <br />
+Overwritable method that runs after a request from the front-end from <em>node</em> to get transformations.</p>
+<p>experiment<strong>.transformation_post_request</strong>(<em>node, transformation</em>) <br />
+Overwritable method that runs after a request from the front-end from <em>node</em> to make a transformation.</p>
+<p>experiment<strong>.transmission_get_request</strong>(<em>node, transmissions</em>) <br />
+Overwritable method that runs after a request from the front-end from <em>node</em> to get transmissions.</p>
+<p>experiment<strong>.transmission_post_request</strong>(<em>node, transmission</em>) <br />
+Overwritable method that runs after a request from the front-end from <em>node</em> to send a transmission.</p>
+<p>experiment<strong>.vector_get_request</strong>(<em>node, vectors</em>) <br />
+Overwritable method that runs after a request from the front-end from <em>node</em> to get vectors.</p>
+<p>experiment<strong>.vector_post_request</strong>(<em>node, vector</em>) <br />
+Overwritable method that runs after a request from the front-end from <em>node</em> to make a vector.</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
+        </footer>
+
+        <script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
 
-	<title>Keys for AWS, Heroku, etc. - Wallace</title>
+	<title>Command-line utility - Wallace</title>
 
         <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -56,7 +56,7 @@
             
             
             
-                <li class="dropdown active">
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Installation <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
@@ -73,8 +73,8 @@
 
                     
                         
-<li class="active">
-    <a href="./">Keys for AWS, Heroku, etc.</a>
+<li >
+    <a href="../AWS-etc-keys/">Keys for AWS, Heroku, etc.</a>
 </li>
 
                     
@@ -89,7 +89,7 @@
             
             
             
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usage <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
@@ -106,8 +106,8 @@
 
                     
                         
-<li >
-    <a href="../Command-line-utility/">Command-line utility</a>
+<li class="active">
+    <a href="./">Command-line utility</a>
 </li>
 
                     
@@ -167,12 +167,12 @@
                     </a>
                 </li>
                 <li >
-                    <a rel="next" href="../Developing-Wallace-(setup-guide)/">
+                    <a rel="next" href="../Demoing-Wallace/">
                         <i class="fa fa-arrow-left"></i> Previous
                     </a>
                 </li>
                 <li >
-                    <a rel="prev" href="../Wallace-with-Anaconda/">
+                    <a rel="prev" href="../Monitoring-a-live-experiment/">
                         Next <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
@@ -186,61 +186,96 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#creating-your-api-key-access-file">Creating your API Key access file</a></li>
+        <li class="main active"><a href="#verify">verify</a></li>
         
-            <li><a href="#psiturk">psiTurk</a></li>
+    
+        <li class="main "><a href="#debug">debug</a></li>
         
-            <li><a href="#aws-api-keys">AWS API Keys</a></li>
+    
+        <li class="main "><a href="#sandbox">sandbox</a></li>
         
-            <li><a href="#making-the-wallaceconfig-file">Making the .wallaceconfig file</a></li>
+    
+        <li class="main "><a href="#deploy">deploy</a></li>
         
-            <li><a href="#heroku">Heroku</a></li>
+    
+        <li class="main "><a href="#logs">logs</a></li>
         
-            <li><a href="#ready-to-wallace-your-first-experiment">Ready to Wallace your first experiment‽</a></li>
+    
+        <li class="main "><a href="#status">status</a></li>
+        
+    
+        <li class="main "><a href="#export">export</a></li>
+        
+    
+        <li class="main "><a href="#summary">summary</a></li>
+        
+    
+        <li class="main "><a href="#qualify">qualify</a></li>
+        
+    
+        <li class="main "><a href="#hibernate">hibernate</a></li>
+        
+    
+        <li class="main "><a href="#awaken">awaken</a></li>
+        
+    
+        <li class="main "><a href="#create">create</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<p>Before you can use Wallace you will need accounts with the following services, which will make it possible for you to deploy Wallace experiments on the web: <a href="https://psiturk.org/register">psiTurk</a>, <a href="http://aws.amazon.com/">Amazon Web Services</a>, <a href="https://requester.mturk.com/">Amazon Mechanical Turk</a>, &amp; <a href="https://signup.heroku.com/identity">Heroku</a>.</p>
-<p>In addition to signing up for the relevant accounts you will need to set up your environment such that Wallace is able to access your accounts. </p>
-<p>This involves first creating an API Key access file so that it can connect to your psiTurk and Amazon Web Services accounts. Wallace interfaces with Amazon Mechanical Turk via your Amazon Web Services Account. </p>
-<p>You then will need to set up your command line installation of the Heroku toolset to be able to log in to your Heroku account. </p>
-<h1 id="creating-your-api-key-access-file">Creating your API Key access file</h1>
-<h2 id="psiturk">psiTurk</h2>
-<p>When you create your psiTurk account this will require a valid email address, and once you confirm your account you can then click on <a href="https://psiturk.org/dashboard/api_credentials"><strong>API Keys</strong></a> which will allow you to access your API keys as seen in the image below:</p>
-<p><img alt="Don't even try to use these API Keys, they've been reissued!" src="http://note.io/145nfz4" /></p>
-<h2 id="aws-api-keys">AWS API Keys</h2>
-<p>One feature of the AWS API keys is that they are only displayed once, and while they can be regenerated that will render invalid previously generated keys. If you are running experiments using a laboratory account (or any other kind of group-owned account) if you regenerate keys that will stop other users who have previously generated keys from being able to use the AWS account. Unless you are sure that you will not be interrupting others' workflows, it is advised that you do <strong>not</strong> generate new API keys. </p>
-<p>A corollary is that when you create your AWS account be sure to record your values for the following keys:</p>
-<pre><code>aws_access_key_id = 
-aws_secret_access_key =
-</code></pre>
-<p>If you are not the primary user of the account, see if you can obtain these keys from others who have successfully been able to use AWS.</p>
-<h2 id="making-the-wallaceconfig-file">Making the <code>.wallaceconfig</code> file</h2>
-<p>Place your psiTurk and Amazon Web Services credentials in <code>~/.wallaceconfig</code> (you may need to create this file:  <code>touch ~/.wallaceconfig</code>); it should live in your home directory). </p>
-<p>In your preferred text editor, edit the file to include the following text(filling in the ALL_CAPS with your relevant values):</p>
-<pre><code>$ cat ~/.wallaceconfig
-[AWS Access]
-aws_access_key_id = YOUR_AWS_ACCESS_KEY_ID
-aws_secret_access_key = YOUR_AWS_SECRET_ACCESS_KEY
-
-[psiTurk Access]
-psiturk_access_key_id = YOUR_PSITURK_ACCESS_KEY_ID
-psiturk_secret_access_id = YOUR_PSITURK_SECRET_ACCESS_ID
-</code></pre>
-<h2 id="heroku">Heroku</h2>
-<p>Sign up for <a href="https://www.heroku.com/">Heroku</a>, and install the <a href="https://toolbelt.heroku.com/">Heroku toolbelt</a>. </p>
-<p>You should be able to see an interface that looks like the following</p>
-<p><img alt="This is the interface with the Heroku app" src="http://note.io/11c7tkL" /></p>
-<p>Then, log in from the command line:</p>
-<pre><code>heroku login
-</code></pre>
-<p>You won't need to interact with Heroku directly from here on out --- the Wallace command line tool handles that for you.</p>
-<h2 id="ready-to-wallace-your-first-experiment">Ready to Wallace your first experiment‽</h2>
-<p>Now you're all set up with the tools you need to work with Wallace. </p>
-<p>Now it's time to test Wallace to make sure it's working on your system. <a href="https://github.com/suchow/Wallace/wiki#testing-wallace">click here to see the next steps and demos</a>.</p></div>
+<p>Wallace is executed from the command line within the experiment directory with the following commands: <br />
+<em> <a href="#verify"><code>wallace verify</code></a>
+</em> <a href="#debug"><code>wallace debug</code></a>
+<em> <a href="#sandbox"><code>wallace sandbox</code></a>
+</em> <a href="#deploy"><code>wallace deploy</code></a>
+<em> <a href="#logs"><code>wallace logs</code></a>
+</em> <a href="#status"><code>wallace status</code></a>
+<em> <a href="#export"><code>wallace export</code></a>
+</em> <a href="#summary"><code>wallace summary</code></a>
+<em> <a href="#qualify"><code>wallace qualify</code></a>
+</em> <a href="#hibernate"><code>wallace hibernate</code></a>
+<em> <a href="#awaken"><code>wallace awaken</code></a>
+</em> <a href="#create"><code>wallace create</code></a></p>
+<h4 id="verify">verify</h4>
+<p>Verifies that a directory is a Wallace-compatible app.</p>
+<h4 id="debug">debug</h4>
+<p><code>--verbose</code> <br />
+Runs the experiment locally. If <code>--verbose</code> is included more detailed logs are printed to the command line.</p>
+<h4 id="sandbox">sandbox</h4>
+<p><code>--verbose</code> <br />
+<code>--app &lt;name&gt;</code> <br />
+Runs the experiment on MTurk's sandbox using Heroku as a server. If <code>--verbose</code> is included more detailed logs are printed to the command line. If <code>--app</code> is specified the app on heroku will have that name.</p>
+<h4 id="deploy">deploy</h4>
+<p><code>--verbose</code> <br />
+<code>--app &lt;name&gt;</code> <br />
+Runs the experiment live on MTurk using Heroku as a server. If <code>--verbose</code> is included more detailed logs are printed to the command line. If <code>--app</code> is specified the app on heroku will have that name.</p>
+<h4 id="logs">logs</h4>
+<p><code>--app &lt;app&gt;</code> <br />
+Opens the app's logs in Papertrail.</p>
+<h4 id="status">status</h4>
+<p>Returns the status of an experiment.</p>
+<h4 id="export">export</h4>
+<p>Downloads the database and partial server logs to a zipped folder within the data directory of the experimental folder. Databases are stored in csv format.</p>
+<h4 id="summary">summary</h4>
+<p><code>--app &lt;app-id&gt;</code> <br />
+Prints a summary of the participant table to the command line. You must specify the app id.</p>
+<h4 id="qualify">qualify</h4>
+<p><code>--qualification &lt;qualification_id&gt;</code> <br />
+<code>--value &lt;value&gt;</code> <br />
+<code>--worker &lt;worker_id&gt;</code> <br />
+Assigns qualification <code>qualification_id</code> with value <code>value</code> to worker <code>worker_id</code>. This is useful when compensating workers if something goes wrong with the experiment.</p>
+<h4 id="hibernate">hibernate</h4>
+<p><code>--app &lt;app&gt;</code> <br />
+Temporarily scales down the specified app to save money. All dynos are removed and so are many of the add-ons. Hibernating apps are non-functional. It is likely that the app will not be entirely free while hibernating. To restore the app use <code>awaken</code>.</p>
+<h4 id="awaken">awaken</h4>
+<p><code>--app &lt;app&gt;</code> <br />
+Retore a hibernating app.</p>
+<h4 id="create">create</h4>
+<p><code>--example &lt;demo&gt;</code> <br />
+Copies the <code>&lt;demo&gt;</code> experiment from the examples directory to the command line location. <code>&lt;demo&gt;</code> must be the name of a directory with the examples directory. The default is <code>bartlett1932</code>.</p></div>
         </div>
 
         <footer class="col-md-12">
