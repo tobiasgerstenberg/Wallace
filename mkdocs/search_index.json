@@ -108,7 +108,7 @@
         {
             "location": "/Wallace-with-Anaconda/", 
             "text": "If you are interested in developing Wallace but already use \nAnaconda\n, you'll need to slightly adapt the standard instructions for Wallace.\n\n\nInstall Wallace\n\n\nYou'll follow all of the \nWallace development installation instructions\n, \nwith the exception of the virtual environment step\n.\n\n\nConfirm Wallace works\n\n\nNow, we need to make sure that Wallace and Anaconda play nice with one another. At this point, we'd check to make sure that Wallace is properly installed by typing\n\n\nwallace --version\n\n\n\n\ninto the command line. For those of us with Anaconda, we'll get a long error message. Don't panic! Add the following to your \n.bash_profile\n:\n\n\nexport DYLD_FALLBACK_LIBRARY_PATH=$HOME/anaconda/lib/:$DYLD_FALLBACK_LIBRARY_PATH\n\n\n\n\nAfter you \nsource\n your \n.bash_profile\n, you can check your Wallace version (using the same command that we used earlier), which should return the Wallace version that you've installed.\n\n\nRe-link \nopenssl\n\n\nFinally, you'll need to re-link \nopenssl\n. Run the following:\n\n\nbrew install --upgrade openssl\nbrew unlink openssl \n brew link openssl --force", 
-            "title": "For Anaconda users"
+            "title": "For users of Anaconda"
         }, 
         {
             "location": "/Wallace-with-Anaconda/#install-wallace", 
