@@ -1,275 +1,299 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../img/favicon.ico">
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Classes - Wallace</title>
+  
 
-	<title>Classes - Wallace</title>
+  <link rel="shortcut icon" href="../img/favicon.ico">
 
-        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../css/font-awesome-4.0.3.css" rel="stylesheet">
-        <link rel="stylesheet" href="../css/highlight.css">
-        <link href="../css/base.css" rel="stylesheet">
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
 
-        
-    </head>
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Classes";
+    var mkdocs_page_input_path = "Classes.md";
+    var mkdocs_page_url = "/Classes/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
 
-    <body>
+  
+</head>
 
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
+<body class="wy-body-for-nav" role="document">
 
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+  <div class="wy-grid-for-nav">
 
-            <!-- Main title -->
-            <a class="navbar-brand" href="..">Wallace</a>
-        </div>
-
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-            <!-- Main navigation -->
-            <ul class="nav navbar-nav">
-            
-            
-                <li >
-                    <a href="..">Introduction</a>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Installation <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        
-<li >
-    <a href="../Installing-Wallace-(for-users)/">For users</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../Developing-Wallace-(setup-guide)/">For developers</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../AWS-etc-keys/">Keys for AWS, Heroku, etc.</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../Wallace-with-Anaconda/">For users of Anaconda</a>
-</li>
-
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usage <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        
-<li >
-    <a href="../Learning-to-use-Wallace/">Learning to use Wallace</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../Demoing-Wallace/">Running a demo</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../Command-line-utility/">Command-line utility</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../Monitoring-a-live-experiment/">Monitoring a live experiment</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../Postico-and-Postgres/">Examining the database</a>
-</li>
-
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown active">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">New experiments <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        
-<li >
-    <a href="../Required-experimental-files/">Required experimental files</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../The-Experiment-Class/">The Experiment Class</a>
-</li>
-
-                    
-                        
-<li class="active">
-    <a href="./">Classes</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../Web-API/">Web API</a>
-</li>
-
-                    
-                        
-<li >
-    <a href="../Communicating-with-the-server/">Communicating with the server</a>
-</li>
-
-                    
-                    </ul>
-                </li>
-            
-            
-            </ul>
-
-            <!-- Search, Navigation and Repo links -->
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                <li >
-                    <a rel="next" href="../The-Experiment-Class/">
-                        <i class="fa fa-arrow-left"></i> Previous
-                    </a>
-                </li>
-                <li >
-                    <a rel="prev" href="../Web-API/">
-                        Next <i class="fa fa-arrow-right"></i>
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Wallace</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
 </div>
+      </div>
 
-        <div class="container">
-            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-    
-        <li class="main active"><a href="#network">Network</a></li>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Introduction</a>
         
-            <li><a href="#columns">Columns</a></li>
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Installation</span></li>
+
         
-            <li><a href="#relationships">Relationships</a></li>
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Installing-Wallace-(for-users)/">For users</a>
         
-            <li><a href="#functions">Functions</a></li>
+    </li>
+
         
-    
-        <li class="main "><a href="#node">Node</a></li>
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Developing-Wallace-(setup-guide)/">For developers</a>
         
-            <li><a href="#columns_1">Columns</a></li>
+    </li>
+
         
-            <li><a href="#relationships_1">Relationships</a></li>
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../AWS-etc-keys/">Keys for AWS, Heroku, etc.</a>
         
-            <li><a href="#methods">Methods</a></li>
+    </li>
+
         
-    
-        <li class="main "><a href="#vector">Vector</a></li>
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wallace-with-Anaconda/">For users of Anaconda</a>
         
-            <li><a href="#columns_2">Columns</a></li>
+    </li>
+
         
-            <li><a href="#relationships_2">Relationships</a></li>
-        
-            <li><a href="#methods_1">Methods</a></li>
-        
-    
-        <li class="main "><a href="#info">Info</a></li>
-        
-            <li><a href="#columns_3">Columns</a></li>
-        
-            <li><a href="#relationships_3">Relationships</a></li>
-        
-            <li><a href="#methods_2">Methods</a></li>
-        
-    
-        <li class="main "><a href="#transmission">Transmission</a></li>
-        
-            <li><a href="#columns_4">Columns</a></li>
-        
-            <li><a href="#relationships_4">Relationships</a></li>
-        
-            <li><a href="#methods_3">Methods</a></li>
-        
-    
-        <li class="main "><a href="#transformation">Transformation</a></li>
-        
-            <li><a href="#columns_5">Columns</a></li>
-        
-            <li><a href="#relationships_5">Relationships</a></li>
-        
-    
-        <li class="main "><a href="#participant">Participant</a></li>
-        
-            <li><a href="#columns_6">Columns</a></li>
-        
-            <li><a href="#relationships_6">Relationships</a></li>
-        
-            <li><a href="#methods_4">Methods</a></li>
-        
-    
-        <li class="main "><a href="#question">Question</a></li>
-        
-            <li><a href="#columns_7">Columns</a></li>
-        
-            <li><a href="#relationships_7">Relationships</a></li>
-        
-            <li><a href="#methods_5">Methods</a></li>
-        
-    
     </ul>
-</div></div>
-            <div class="col-md-9" role="main">
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Usage</span></li>
 
-<p>The classes involved in a Wallace experiment are: <a href="https://github.com/suchow/Wallace/wiki/Classes#network">Network</a>, <a href="https://github.com/suchow/Wallace/wiki/Classes#node">Node</a>, <a href="https://github.com/suchow/Wallace/wiki/Classes#vector">Vector</a>, <a href="https://github.com/suchow/Wallace/wiki/Classes#info">Info</a>, <a href="https://github.com/suchow/Wallace/wiki/Classes#transmission">Transmission</a>, <a href="https://github.com/suchow/Wallace/wiki/Classes#transformation">Transformation</a>, <a href="https://github.com/suchow/Wallace/wiki/Classes#participant">Participant</a> and <a href="https://github.com/suchow/Wallace/wiki/Classes#question">Question</a>. The code for all these classes can be seen in models.py. All of the classes have a corresponding table in the database, with each instance stored as a row in the relevant table. Accordingly, each class is defined, in part, by the columns that constitute the table it is stored in. In addition, the classes have relationships to other objects and a number of functions.</p>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Learning-to-use-Wallace/">Learning to use Wallace</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Demoing-Wallace/">Running a demo</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Command-line-utility/">Command-line utility</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Monitoring-a-live-experiment/">Monitoring a live experiment</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Postico-and-Postgres/">Examining the database</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>New experiments</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Required-experimental-files/">Required experimental files</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../The-Experiment-Class/">The Experiment Class</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Classes</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#network">Network</a></li>
+                
+                    <li><a class="toctree-l4" href="#columns">Columns</a></li>
+                
+                    <li><a class="toctree-l4" href="#relationships">Relationships</a></li>
+                
+                    <li><a class="toctree-l4" href="#functions">Functions</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#node">Node</a></li>
+                
+                    <li><a class="toctree-l4" href="#columns_1">Columns</a></li>
+                
+                    <li><a class="toctree-l4" href="#relationships_1">Relationships</a></li>
+                
+                    <li><a class="toctree-l4" href="#methods">Methods</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#vector">Vector</a></li>
+                
+                    <li><a class="toctree-l4" href="#columns_2">Columns</a></li>
+                
+                    <li><a class="toctree-l4" href="#relationships_2">Relationships</a></li>
+                
+                    <li><a class="toctree-l4" href="#methods_1">Methods</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#info">Info</a></li>
+                
+                    <li><a class="toctree-l4" href="#columns_3">Columns</a></li>
+                
+                    <li><a class="toctree-l4" href="#relationships_3">Relationships</a></li>
+                
+                    <li><a class="toctree-l4" href="#methods_2">Methods</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#transmission">Transmission</a></li>
+                
+                    <li><a class="toctree-l4" href="#columns_4">Columns</a></li>
+                
+                    <li><a class="toctree-l4" href="#relationships_4">Relationships</a></li>
+                
+                    <li><a class="toctree-l4" href="#methods_3">Methods</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#transformation">Transformation</a></li>
+                
+                    <li><a class="toctree-l4" href="#columns_5">Columns</a></li>
+                
+                    <li><a class="toctree-l4" href="#relationships_5">Relationships</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#participant">Participant</a></li>
+                
+                    <li><a class="toctree-l4" href="#columns_6">Columns</a></li>
+                
+                    <li><a class="toctree-l4" href="#relationships_6">Relationships</a></li>
+                
+                    <li><a class="toctree-l4" href="#methods_4">Methods</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#question">Question</a></li>
+                
+                    <li><a class="toctree-l4" href="#columns_7">Columns</a></li>
+                
+                    <li><a class="toctree-l4" href="#relationships_7">Relationships</a></li>
+                
+                    <li><a class="toctree-l4" href="#methods_5">Methods</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Web-API/">Web API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Communicating-with-the-server/">Communicating with the server</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Wallace</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>New experiments &raquo;</li>
+        
+      
+    
+    <li>Classes</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>The classes involved in a Wallace experiment are: <a href="https://github.com/suchow/Wallace/wiki/Classes#network">Network</a>, <a href="https://github.com/suchow/Wallace/wiki/Classes#node">Node</a>, <a href="https://github.com/suchow/Wallace/wiki/Classes#vector">Vector</a>, <a href="https://github.com/suchow/Wallace/wiki/Classes#info">Info</a>, <a href="https://github.com/suchow/Wallace/wiki/Classes#transmission">Transmission</a>, <a href="https://github.com/suchow/Wallace/wiki/Classes#transformation">Transformation</a>, <a href="https://github.com/suchow/Wallace/wiki/Classes#participant">Participant</a> and <a href="https://github.com/suchow/Wallace/wiki/Classes#question">Question</a>. The code for all these classes can be seen in models.py. All of the classes have a corresponding table in the database, with each instance stored as a row in the relevant table. Accordingly, each class is defined, in part, by the columns that constitute the table it is stored in. In addition, the classes have relationships to other objects and a number of functions.</p>
 <p>The classes have relationships to each other as shown in the diagram below (be careful about which way the arrows point). A Node is a point in a Network that might be associated with a Participant. A Vector is a directional connection between two Nodes. An Info is a piece of information created by a Node. A Transmission is an instance of an Info being sent along a Vector. A Transformation is a relationship between two Infos. A Question is a piece of information created by a Participant.</p>
 <p><img alt="" src="https://github.com/suchow/Wallace/blob/master/wiki/images/class%20chart.jpg" /></p>
 <h3 id="network">Network</h3>
@@ -589,45 +613,50 @@ Return a list of questions associated with the participant. If specified, <em>ty
 <p>question<strong>.fail</strong>() <br />
 Set question.failed to True and question.time_of_death to now.</p>
 <hr />
-<hr /></div>
-        </div>
-
-        <footer class="col-md-12">
-            <hr>
-            
-            <center>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</center>
-        </footer>
-
-        <script src="../js/jquery-1.10.2.min.js"></script>
-        <script src="../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../js/highlight.pack.js"></script>
-        <script>var base_url = '..';</script>
-        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
-        <script src="../js/base.js"></script>
-
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>
-                            From here you can search these documents. Enter
-                            your search terms below.
-                        </p>
-                        <form role="form">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
-                            </div>
-                        </form>
-                        <div id="mkdocs-search-results"></div>
-                    </div>
-                    <div class="modal-footer">
-                    </div>
-                </div>
+<hr />
+              
             </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Web-API/" class="btn btn-neutral float-right" title="Web API">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../The-Experiment-Class/" class="btn btn-neutral" title="The Experiment Class"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
         </div>
-    </body>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../The-Experiment-Class/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Web-API/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
 </html>
