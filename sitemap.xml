@@ -64,6 +64,16 @@
     </url>
         
     <url>
+     <loc>None/Postico-and-Postgres/</loc>
+     <lastmod>2016-08-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
      <loc>None/Required-experimental-files/</loc>
      <lastmod>2016-08-07</lastmod>
      <changefreq>daily</changefreq>
@@ -71,12 +81,6 @@
         
     <url>
      <loc>None/The-Experiment-Class/</loc>
-     <lastmod>2016-08-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/Postico-and-Postgres/</loc>
      <lastmod>2016-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
