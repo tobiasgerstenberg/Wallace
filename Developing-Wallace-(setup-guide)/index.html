@@ -50,6 +50,11 @@ If you do not have Python 2.7 installed, you can install it from the <a href="ht
 </code></pre>
 
 <hr />
+<h4 id="create-the-database">Create the Database</h4>
+<p>After installing Postgres, you will need to create a database for your experiments to use. Run the following command from the comand line:</p>
+<pre><code>psql -c 'create database wallace;' -U postgres
+</code></pre>
+
 <h4 id="set-up-a-virtual-environment">Set up a virtual environment</h4>
 <p>Set up a virtual environment by running the following commands:</p>
 <pre><code>pip install virtualenv
@@ -125,6 +130,11 @@ workon wallace
     
   </ul>
     
+      <li><a href="#create-the-database">Create the Database</a></li>
+      <ul>
+    
+  </ul>
+    
       <li><a href="#set-up-a-virtual-environment">Set up a virtual environment</a></li>
       <ul>
     
@@ -187,7 +197,7 @@ workon wallace
 
   <!--
   MkDocs version      : 0.15.3
-  Docs Build Date UTC : 2016-08-08 15:26:43.748076
+  Docs Build Date UTC : 2016-08-08 15:38:51.715006
   -->
 </body>
 </html>
