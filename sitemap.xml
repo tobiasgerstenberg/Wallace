@@ -4,7 +4,7 @@
     
     <url>
      <loc>None/</loc>
-     <lastmod>2016-07-28</lastmod>
+     <lastmod>2016-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +12,7 @@
     
     <url>
      <loc>None/Classes/</loc>
-     <lastmod>2016-07-28</lastmod>
+     <lastmod>2016-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -20,7 +20,7 @@
     
     <url>
      <loc>None/Command-line-utility/</loc>
-     <lastmod>2016-07-28</lastmod>
+     <lastmod>2016-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -28,7 +28,15 @@
     
     <url>
      <loc>None/Communicating-with-the-server/</loc>
-     <lastmod>2016-07-28</lastmod>
+     <lastmod>2016-08-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>None/Demoing-Wallace/</loc>
+     <lastmod>2016-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -36,7 +44,7 @@
     
     <url>
      <loc>None/Developing-Wallace-(setup-guide)/</loc>
-     <lastmod>2016-07-28</lastmod>
+     <lastmod>2016-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -44,7 +52,7 @@
     
     <url>
      <loc>None/Installing-Wallace-(for-users)/</loc>
-     <lastmod>2016-07-28</lastmod>
+     <lastmod>2016-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -52,7 +60,7 @@
     
     <url>
      <loc>None/Learning-to-use-Wallace/</loc>
-     <lastmod>2016-07-28</lastmod>
+     <lastmod>2016-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -60,7 +68,7 @@
     
     <url>
      <loc>None/Monitoring-a-live-experiment/</loc>
-     <lastmod>2016-07-28</lastmod>
+     <lastmod>2016-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -68,7 +76,7 @@
     
     <url>
      <loc>None/Required-experimental-files/</loc>
-     <lastmod>2016-07-28</lastmod>
+     <lastmod>2016-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -76,7 +84,7 @@
     
     <url>
      <loc>None/Setting-up-AWS,-psiTurk,-MTurk,-and-Heroku/</loc>
-     <lastmod>2016-07-28</lastmod>
+     <lastmod>2016-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -84,7 +92,7 @@
     
     <url>
      <loc>None/The-Experiment-class/</loc>
-     <lastmod>2016-07-28</lastmod>
+     <lastmod>2016-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -92,7 +100,7 @@
     
     <url>
      <loc>None/Using-Postico-to-examine-a-Postgres-database/</loc>
-     <lastmod>2016-07-28</lastmod>
+     <lastmod>2016-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -100,7 +108,7 @@
     
     <url>
      <loc>None/Wallace,-the-scientist/</loc>
-     <lastmod>2016-07-28</lastmod>
+     <lastmod>2016-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -108,7 +116,7 @@
     
     <url>
      <loc>None/Wallace-with-Anaconda/</loc>
-     <lastmod>2016-07-28</lastmod>
+     <lastmod>2016-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -116,7 +124,7 @@
     
     <url>
      <loc>None/Web-API/</loc>
-     <lastmod>2016-07-28</lastmod>
+     <lastmod>2016-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -125,31 +133,31 @@
         
     <url>
      <loc>None/demos/bartlett1932/</loc>
-     <lastmod>2016-07-28</lastmod>
+     <lastmod>2016-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/demos/chatroom/</loc>
-     <lastmod>2016-07-28</lastmod>
+     <lastmod>2016-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/demos/function-learning/</loc>
-     <lastmod>2016-07-28</lastmod>
+     <lastmod>2016-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/demos/mcmcp/</loc>
-     <lastmod>2016-07-28</lastmod>
+     <lastmod>2016-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/demos/rogers/</loc>
-     <lastmod>2016-07-28</lastmod>
+     <lastmod>2016-08-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

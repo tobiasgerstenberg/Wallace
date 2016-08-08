@@ -5,7 +5,7 @@
   
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>Wallace with Anaconda &mdash; Wallace</title>
+    <title>Demoing Wallace &mdash; Wallace</title>
 
     
       <link rel="shortcut icon" href="../img/favicon.ico">
@@ -32,24 +32,27 @@
       <div class="bodywrapper">
         <div class="body" role="main">
           
-            <p>If you are interested in developing Wallace but already use <a href="https://www.continuum.io/downloads">Anaconda</a>, you'll need to slightly adapt the standard instructions for Wallace.</p>
-<h2 id="install-wallace">Install Wallace</h2>
-<p>You'll follow all of the <a href="https://github.com/berkeley-cocosci/Wallace/wiki/Developing-Wallace-(setup-guide)">Wallace development installation instructions</a>, <strong>with the exception of the virtual environment step</strong>.</p>
-<h2 id="confirm-wallace-works">Confirm Wallace works</h2>
-<p>Now, we need to make sure that Wallace and Anaconda play nice with one another. At this point, we'd check to make sure that Wallace is properly installed by typing</p>
-<pre><code>wallace --version
+            <p>First, make sure you have Wallace installed:</p>
+<ul>
+<li><a href="../Installing-Wallace-(for-users)/">Installation instructions for users</a></li>
+<li><a href="../Developing-Wallace-(setup-guide)/">Installation instructions for developers</a></li>
+</ul>
+<p>To test that Wallace works we will run an example experiment in debug mode. From a terminal within the Wallace directory, run</p>
+<pre><code>cd examples/bartlett1932
+wallace debug
 </code></pre>
 
-<p>into the command line. For those of us with Anaconda, we'll get a long error message. Don't panic! Add the following to your <code>.bash_profile</code>:</p>
-<pre><code>export DYLD_FALLBACK_LIBRARY_PATH=$HOME/anaconda/lib/:$DYLD_FALLBACK_LIBRARY_PATH
+<p>You will see some print-out as Wallace loads. When it is finished you will see something that looks like:</p>
+<pre><code>Now serving on http://0.0.0.0:5000
+[psiTurk server:on mode:sdbx #HITs:4]$
 </code></pre>
 
-<p>After you <code>source</code> your <code>.bash_profile</code>, you can check your Wallace version (using the same command that we used earlier), which should return the Wallace version that you've installed.</p>
-<h2 id="re-link-openssl">Re-link <code>openssl</code></h2>
-<p>Finally, you'll need to re-link <code>openssl</code>. Run the following:</p>
-<pre><code>brew install --upgrade openssl
-brew unlink openssl &amp;&amp; brew link openssl --force
+<p>Into that prompt type,</p>
+<pre><code>debug
 </code></pre>
+
+<p>This will cause the experiment to open in a new window in your browser. Once you have finished the experiment you can type <code>debug</code> again to play as the next participant too.</p>
+<p><strong>Help, the experiment page is blank!</strong> This may happen if you are using an ad-blocker. Try disabling your ad-blocker and refresh the page.</p>
             
           
         </div>
@@ -72,18 +75,6 @@ brew unlink openssl &amp;&amp; brew link openssl --force
 <nav>
   
   
-    <ul>
-    
-  </ul>
-  
-    <ul>
-    
-  </ul>
-  
-    <ul>
-    
-  </ul>
-  
 
   
 </nav>
@@ -91,13 +82,13 @@ brew unlink openssl &amp;&amp; brew link openssl --force
   <h3>Related Topics</h3>
   <ul>
     
-      <li>Previous: <a href="../Wallace,-the-scientist/" title="previous chapter">
-        Wallace, the scientist
+      <li>Previous: <a href="../Communicating-with-the-server/" title="previous chapter">
+        Communicating with the server
       </a></li>
     
     
-      <li>Next: <a href="../Web-API/" title="next chapter">
-        Web API
+      <li>Next: <a href="../Developing-Wallace-(setup-guide)/" title="next chapter">
+        Developing Wallace (setup guide)
       </a></li>
     
   </ul>
@@ -134,7 +125,7 @@ brew unlink openssl &amp;&amp; brew link openssl --force
 
   <!--
   MkDocs version      : 0.15.3
-  Docs Build Date UTC : 2016-08-08 03:10:59.329219
+  Docs Build Date UTC : 2016-08-08 03:10:59.155530
   -->
 </body>
 </html>
