@@ -2,18 +2,13 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Wallace\n\n\nAn automated platform for online, experimental evolution\n\n\nWant to take Wallace for a test drive? Start \nhere\n.\n\n\nWant to learn more? Try \nhere\n.\n\n\nFeel like contributing to Wallace? Great! Start \nhere\n.", 
+            "text": "Wallace\n\n\nWallace is a platform for conducting research on experimental cultural evolution. Its namesake is Alfred Russel Wallace, a British naturalist and the oft-ignored codiscoverer of evolution by natural selection. You can use Wallace to create new experiments or to reproduce existing experiments.\n\n\nWant to take Wallace for a test drive? Start \nhere\n.\n\n\nWant to learn more? Try \nhere\n.\n\n\nFeel like contributing to Wallace? Great! Start \nhere\n.", 
             "title": "Introduction"
         }, 
         {
             "location": "/#wallace", 
-            "text": "", 
+            "text": "Wallace is a platform for conducting research on experimental cultural evolution. Its namesake is Alfred Russel Wallace, a British naturalist and the oft-ignored codiscoverer of evolution by natural selection. You can use Wallace to create new experiments or to reproduce existing experiments.  Want to take Wallace for a test drive? Start  here .  Want to learn more? Try  here .  Feel like contributing to Wallace? Great! Start  here .", 
             "title": "Wallace"
-        }, 
-        {
-            "location": "/#an-automated-platform-for-online-experimental-evolution", 
-            "text": "Want to take Wallace for a test drive? Start  here .  Want to learn more? Try  here .  Feel like contributing to Wallace? Great! Start  here .", 
-            "title": "An automated platform for online, experimental evolution"
         }, 
         {
             "location": "/Installing-Wallace-(for-users)/", 
