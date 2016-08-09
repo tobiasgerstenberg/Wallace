@@ -36,38 +36,38 @@
           
             <p>The Wallace server comes with a number of pre-existing routes by which the front-end can communicate with the back end. Many of these routes correspond to specific functions of Wallace's <a href="https://github.com/berkeley-cocosci/Wallace/wiki/Classes">classes</a>, particularly Node. For instance, Nodes have a connect method that creates new Vectors between Nodes and there is a corresponding connect route that allows the front end to call this method.</p>
 <h4 id="miscellaneous-routes">Miscellaneous routes</h4>
-<p><code>/ad_address/&lt;mode&gt;/&lt;hit_id&gt;</code> [get] <br />
+<p><code>/ad_address/&lt;mode&gt;/&lt;hit_id&gt;</code> GET<br />
 Used to get the address of the experiment on the psiTurk server and to return participants to MTurk upon completion of the experiment. This route is pinged automatically by the function <code>submit_assignment</code> in wallace.js.</p>
-<p><strong>/\<directory>/\<page></strong> [get] <br />
+<p><strong>/\<directory>/\<page></strong> [GET] <br />
 Returns the html page with the name \<page> from the directory called \<directory>.</p>
-<p><strong>/summary</strong> [get] <br />
+<p><strong>/summary</strong> [GET] <br />
 Returns a summary of the statuses of Participants.</p>
-<p><strong>/\<page></strong> [get] <br />
+<p><strong>/\<page></strong> [GET] <br />
 Returns the html page with the name \<page>.</p>
 <h4 id="experiment-routes">Experiment routes</h4>
-<p><strong>/experiment_property/\<property></strong> [get] <br />
+<p><strong>/experiment_property/\<property></strong> [GET] <br />
 Returns the value of the requested property as a json <code>&lt;property&gt;</code>.</p>
-<p><strong>/info/\<node_id>/\<info_id></strong> [get] <br />
+<p><strong>/info/\<node_id>/\<info_id></strong> [GET] <br />
 Returns a json description of the requested info as <code>info</code>. <em>node_id</em> must be specified to ensure the requesting node has access to the requested info. Calls experiment method `info_get_request(node, info).</p>
-<p><strong>/info/\<node_id></strong> [post] <br />
+<p><strong>/info/\<node_id></strong> [POST] <br />
 Create an info with its origin set to the specified node. <em>contents</em> must be passed as data. <em>info_type</em> can be passed as data and will cause the info to be of the specified type. Also calls experiment method <code>info_post_request(node, info)</code>.</p>
-<p><strong>/launch</strong> [post] <br />
+<p><strong>/launch</strong> [POST] <br />
 Initializes the experiment and opens recruitment. This route is automatically pinged by Wallace.</p>
-<p><strong>/network/\<network_id></strong> [get] <br />
+<p><strong>/network/\<network_id></strong> [GET] <br />
 Returns a json description of the requested network as <code>network</code>.</p>
-<p><strong>/node/\<node_id>/connect/\<other_node_id></strong> [post] <br />
+<p><strong>/node/\<node_id>/connect/\<other_node_id></strong> [POST] <br />
 Create vector(s) between the <code>node</code> and <code>other_node</code> by calling <code>node.connect(whom=other_node)</code>. Direction can be passed as data and will be forwarded as an argument. Calls experiment method <code>vector_post_request(node, vectors)</code>. Returns a list of json descriptions of the created vectors as <code>vectors</code>.</p>
-<p><strong>/node/\<node_id>/infos</strong> [get] <br />
+<p><strong>/node/\<node_id>/infos</strong> [GET] <br />
 Returns a list of json descriptions of the infos created by the node as <code>infos</code>. Infos are identified by calling <code>node.infos()</code>. <em>info_type</em> can be passed as data and will be forwarded as an argument. Requesting node and the list of infos are also passed to experiment method <code>info_get_request(node, infos)</code>.</p>
-<p><strong>/node/\<node_id>/neighbors</strong> [get] <br />
+<p><strong>/node/\<node_id>/neighbors</strong> [GET] <br />
 Returns a list of json descriptions of the node's neighbors as <code>nodes</code>. Neighbors are identified by calling <code>node.neighbors()</code>. <em>node_type</em> and <em>connection</em> can be passed as data and will be forwarded as arguments. Requesting node and list of neighbors are also passed to experiment method <code>node_get_request(node, nodes)</code>.</p>
-<p><strong>/node/\<node_id>/received_infos</strong> [get] <br />
+<p><strong>/node/\<node_id>/received_infos</strong> [GET] <br />
 Returns a list of json descriptions of the infos sent to the node as <code>infos</code>. Infos are identified by calling <code>node.received_infos()</code>. <em>info_type</em> can be passed as data and will be forwarded as an argument. Requesting node and the list of infos are also passed to experiment method <code>info_get_request(node, infos)</code>.</p>
-<p><strong>/node/\<int:node_id>/transformations</strong> [get] <br />
+<p><strong>/node/\<int:node_id>/transformations</strong> [GET] <br />
 Returns a list of json descriptions of all the transformations of a node identified using <code>node.transformations()</code>. The node id must be specified in the url. You can also pass <em>transformation_type</em> as data and it will be forwarded to <code>node.transformations()</code> as the argument <em>type</em>.</p>
-<p><strong>/node/\<node_id>/transmissions</strong> [get] <br />
+<p><strong>/node/\<node_id>/transmissions</strong> [GET] <br />
 Returns a list of json descriptions of the transmissions sent to/from the node as <code>transmissions</code>. Transmissions are identified by calling <code>node.transmissions()</code>. <em>direction</em> and <em>status</em> can be passed as data and will be forwarded as arguments. Requesting node and the list of transmissions are also passed to experiment method <code>transmission_get_request(node, transmissions)</code>.</p>
-<p><strong>/node/\<node_id>/transmit</strong> [post] <br />
+<p><strong>/node/\<node_id>/transmit</strong> [POST] <br />
 Transmit to another node by calling <code>node.transmit()</code>. The sender's node id must be specified in the url. As with node.transmit() the key parameters are what and to_whom and they should be passed as data. However, the values these accept are more limited than for the back end due to the necessity of serialization. <br />
 If what and to_whom are not specified they will default to None.
 Alternatively you can pass an int (e.g. '5') or a class name (e.g.
@@ -91,19 +91,19 @@ For example, to transmit all infos of type Meme to the node with id 10:</p>
 });
 </code></pre>
 
-<p><strong>/node/\<node_id>/vectors</strong> [get] <br />
+<p><strong>/node/\<node_id>/vectors</strong> [GET] <br />
 Returns a list of json descriptions of vectors connected to the node as <code>vectors</code>. Vectors are identified by calling <code>node.vectors()</code>. <em>direction</em> and <em>failed</em> can be passed as data and will be forwarded as arguments. Requesting node and list of vectors are also passed to experiment method <code>vector_get_request(node, vectors)</code>. </p>
-<p><strong>/node/\<participant_id></strong> [post] <br />
+<p><strong>/node/\<participant_id></strong> [POST] <br />
 Create a node for the specified participant. The route calls the following experiment methods: <code>get_network_for_participant(participant)</code>, <code>create_node(network, participant)</code>, <code>add_node_to_network(node, network)</code>, and <code>node_post_request(participant, node)</code>. Returns a json description of the created node as <code>node</code>.</p>
-<p><strong>/notifications</strong> [post/get] <br />
+<p><strong>/notifications</strong> [POST, GET] <br />
 This is the route to which notifications from AWS are sent. It is also possible to send your own notifications to this route, thereby simulating notifications from AWS. Necessary arguments are <em>Event.1.EventType</em> which can be AssignmentAccepted, AssignmentAbandoned, AssignmentReturned or AssignmentSubmitted and <em>Event.1.AssignmentId</em> which is the id of the relevant assignment. In addition, Wallace uses a custom EventType of NotificationMissing.</p>
-<p><strong>/participant/\<participant_id></strong> [get] <br />
+<p><strong>/participant/\<participant_id></strong> [GET] <br />
 Returns a json description of the requested participant as <code>participant</code>.</p>
-<p><strong>/participant/\<worker_id>/\<hit_id>/\<assignment_id>/\<mode></strong> [post] <br />
+<p><strong>/participant/\<worker_id>/\<hit_id>/\<assignment_id>/\<mode></strong> [POST] <br />
 Create a participant. Returns a json description of the participant as <code>participant</code>.</p>
-<p><strong>/question/\<participant_id></strong> [post] <br />
+<p><strong>/question/\<participant_id></strong> [POST] <br />
 Create a question. <em>question</em>, <em>response</em> and <em>question_id</em> should be passed as data. Does not return anything.</p>
-<p><strong>/transformation/\<int:node_id>/\<int:info_in_id>/\<int:info_out_id></strong> [post] 
+<p><strong>/transformation/\<int:node_id>/\<int:info_in_id>/\<int:info_out_id></strong> [POST] 
 Create a transformation from <em>info_in</em> to <em>info_out</em> at the specified node. <em>transformation_type</em> can be passed as data and the transformation will be of that class if it is a known class. Returns a json description of the created transformation.</p>
             
           
@@ -185,7 +185,7 @@ Create a transformation from <em>info_in</em> to <em>info_out</em> at the specif
 
   <!--
   MkDocs version      : 0.15.3
-  Docs Build Date UTC : 2016-08-09 01:31:14.203039
+  Docs Build Date UTC : 2016-08-09 01:32:35.527398
   -->
 </body>
 </html>
