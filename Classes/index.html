@@ -70,165 +70,165 @@ Update attribute network.full to reflect current network size.</p>
 <p><code>Network.fail()</code> <br />
 Set <code>network.failed</code> to True and <code>network.time_of_death</code> to <code>now</code>. Instruct all not-failed nodes in the network to fail.</p>
 <p><code>Network.infos([type, failed])</code> <br />
-Return a list of infos in the network (i.e., infos made by nodes in the network). If specified, <em>type</em> filters by class. By default failed infos are excluded, to include only failed infos use <em>failed=True</em>, for all infos use <em>failed="all"</em>.</p>
-<p>network<code>.latest_transmission_recipient()</code> <br />
+Return a list of infos in the network (i.e., infos made by nodes in the network). If specified, <code>type</code> filters by class. By default failed infos are excluded, to include only failed infos use <em>failed=True</em>, for all infos use <em>failed="all"</em>.</p>
+<p><code>Network.latest_transmission_recipient()</code> <br />
 Return the node that most recently received a transmission.</p>
-<p>network<code>.nodes</code>([<em>type, failed, participant_id</em>]) <br />
-Return a list of nodes in the network. If specified, <em>type</em> filters by class and <em>participant_id</em> filters by the nodes' associated participants. By default failed nodes are excluded, to include only failed nodes use <em>failed=True</em>, for all nodes use <em>failed="all"</em>.</p>
-<p>network<code>.print_verbose()</code> <br />
+<p><code>Network.nodes([type, failed, participant_id])</code> <br />
+Return a list of nodes in the network. If specified, <code>type</code> filters by class and <code>participant_id</code> filters by the nodes' associated participants. By default failed nodes are excluded, to include only failed nodes use <em>failed=True</em>, for all nodes use <em>failed="all"</em>.</p>
+<p><code>Network.print_verbose()</code> <br />
 Print a verbose description of the network.</p>
-<p>network<code>.size</code>([<em>type, failed</em>]) <br />
-Return the number of nodes in the network. If specified, <em>type</em> filters by class. By default failed nodes are excluded, to include only failed nodes use <em>failed=True</em>, for all nodes use <em>failed="all"</em>.</p>
-<p>network<code>.transformations</code>([<em>type, failed</em>]) <br />
-Return a list of transformations in the network (i.e., transformations by nodes in the network). If specified, <em>type</em> filters by class. By default failed transformations are excluded, to include only failed transformations use <em>failed=True</em>, for all transformations use <em>failed="all"</em>.</p>
-<p>network<code>.transmissions</code>([<em>status, failed</em>]) <br />
+<p><code>Network.size([type, failed])</code> <br />
+Return the number of nodes in the network. If specified, <code>type</code> filters by class. By default failed nodes are excluded, to include only failed nodes use <em>failed=True</em>, for all nodes use <em>failed="all"</em>.</p>
+<p><code>Network.transformations([type, failed])</code> <br />
+Return a list of transformations in the network (i.e., transformations by nodes in the network). If specified, <code>type</code> filters by class. By default failed transformations are excluded, to include only failed transformations use <em>failed=True</em>, for all transformations use <em>failed="all"</em>.</p>
+<p><code>Network.transmissions([status, failed])</code> <br />
 Return a list of transmissions in the network. <em>status</em> can be "pending" or "received" (default is "all"). By default failed transmissions are excluded, to include only failed transmissions use <em>failed=True</em>, for all transmissions use <em>failed="all"</em>.</p>
-<p>network<code>.vectors</code>([<em>failed</em>]) <br />
+<p><code>Network.vectors([failed])</code> <br />
 Return a list of vectors in the network. By default failed vectors are excluded, to include only failed vectors use <em>failed=True</em>, for all vectors use <em>failed="all"</em>.</p>
 <h3 id="node">Node</h3>
 <p>Each Node represents a single point in a single network. A Node must be within a Network and may also be associated with a Participant.</p>
 <h4 id="columns_1">Columns</h4>
 <ul>
-<li><em>id</em> - a unique number for every entry. 1, 2, 3 and so on...</li>
-<li><em>creation_time</em> - the time at which the Node was created.</li>
-<li><em>property1</em> - a generic column that can be used to store experiment specific details in String form.</li>
-<li><em>property2</em>, <em>3</em>, <em>4</em> and <em>5</em> - same as above.</li>
-<li><em>failed</em> - boolean indicating whether the Node has failed which prompts Wallace to ignore it unless specified otherwise. Objects are usually failed to indicate something has gone wrong.</li>
-<li><em>time_of_death</em> - the time at which failing occurred.</li>
-<li><em>type</em> - a String giving the name of the class. Defaults to "node". This allows subclassing.</li>
-<li><em>network_id</em> - the id of the network the node is in.</li>
-<li><em>participant_id</em> - the id of the participant the node is associated with.</li>
+<li><code>id</code> - a unique number for every entry. 1, 2, 3 and so on...</li>
+<li><code>creation_time</code> - the time at which the Node was created.</li>
+<li><code>property1</code> - a generic column that can be used to store experiment specific details in String form.</li>
+<li><code>property2</code>, <code>3</code>, <code>4</code> and <code>5</code> - same as above.</li>
+<li><code>failed</code> - boolean indicating whether the Node has failed which prompts Wallace to ignore it unless specified otherwise. Objects are usually failed to indicate something has gone wrong.</li>
+<li><code>time_of_death</code> - the time at which failing occurred.</li>
+<li><code>type</code> - a String giving the name of the class. Defaults to "node". This allows subclassing.</li>
+<li><code>network_id</code> - the id of the network the node is in.</li>
+<li><code>participant_id</code> - the id of the participant the node is associated with.</li>
 </ul>
 <h4 id="relationships_1">Relationships</h4>
 <ul>
-<li><em>network</em> - the network the node is in.</li>
-<li><em>participant</em> - the participant the node is associated with.</li>
-<li><em>all_outgoing_vectors</em> - all the vectors going out from this Node.</li>
-<li><em>all_incoming_vectors</em> - all the vectors coming in to this Node.</li>
-<li><em>all_infos</em> - all Infos created by this Node.</li>
-<li><em>all_outgoing_transmissions</em> - all Transmissions sent from this Node.</li>
-<li><em>all_incoming_transmissions</em> - all Transmissions sent to this Node.</li>
-<li><em>transformations_here</em> - all transformations that took place at this Node.</li>
+<li><code>network</code> - the network the node is in.</li>
+<li><code>participant</code> - the participant the node is associated with.</li>
+<li><code>all_outgoing_vectors</code> - all the vectors going out from this Node.</li>
+<li><code>all_incoming_vectors</code> - all the vectors coming in to this Node.</li>
+<li><code>all_infos</code> - all Infos created by this Node.</li>
+<li><code>all_outgoing_transmissions</code> - all Transmissions sent from this Node.</li>
+<li><code>all_incoming_transmissions</code> - all Transmissions sent to this Node.</li>
+<li><code>transformations_here</code> - all transformations that took place at this Node.</li>
 </ul>
 <h4 id="methods">Methods</h4>
-<p>node.<code>__repr__()</code> <br />
+<p><code>Node.__repr__()</code> <br />
 Return a simple string representation of the node.</p>
-<p>node<code>.__json__()</code> <br />
+<p><code>Node.__json__()</code> <br />
 Return a JSON object with all the attributes of the node.</p>
-<p>node.<code>_to_whom()</code> <br />
+<p><code>Node._to_whom()</code> <br />
 Return the default value of <em>to_whom</em> for node.transmit(). Should not return None or a list containing None.</p>
-<p>node.<code>_what()</code> <br />
+<p><code>Node._what()</code> <br />
 Return the default value of <em>what</em> for node.transmit(). Should not return None or a list containing None.</p>
-<p>node.<code>connect</code>(<em>whom</em>, [<em>direction</em>]) <br />
+<p><code>Node.connect(whom, [direction])</code>
 Return a list of newly created vector between the node and whom. <em>Whom</em> can be a specific node or a (nested) list of nodes. Nodes can only connect with nodes in the same network. In addition nodes cannot connect with themselves or with Sources. <em>Direction</em> specifies the direction of the connection it can be "to" (node -&gt; whom), "from" (whom -&gt; node) or both (node &lt;-&gt; whom). The defult is "to".</p>
-<p>node<code>.fail()</code> <br />
+<p><code>Node.fail()</code> <br />
 Set node.failed to True and node.time_of_death to now. Instruct all not-failed vectors connected to this node, infos made by this node, transmissions to or from this node and transformations made by this node to fail.</p>
-<p>node.<code>is_connected</code>(<em>whom</em>, [<em>direction</em>]) <br />
-Return a (list of) boolean(s) indicating whether the node has a connection to <em>whom</em>. <em>Whom</em> can be a single other node or a list of other nodes, if the former return a boolean, if the latter return a list of booleans. <em>Direction</em> specifies whether the required direction of the connection. The default value is "to", other values are "from", "both" and "either". Note that this method does not take a <em>failed</em> argument and it will only look along not failed vectors.</p>
-<p>node<code>.infos</code>([<em>type, failed</em>]) <br />
-Return a list of infos created by the node. If specified, <em>type</em> filters by class. By default failed infos are excluded, to include only failed infos use <em>failed=True</em>, for all infos use <em>failed="all"</em>.</p>
-<p>node.<code>mutate</code>(<em>info_in</em>) <br />
+<p><code>Node.is_connected(whom, [direction])</code> <br />
+Return a (list of) boolean(s) indicating whether the node has a connection to <em>whom</em>. <em>Whom</em> can be a single other node or a list of other nodes, if the former return a boolean, if the latter return a list of booleans. <em>Direction</em> specifies whether the required direction of the connection. The default value is "to", other values are "from", "both" and "either". Note that this method does not take a <code>failed</code> argument and it will only look along not failed vectors.</p>
+<p><code>Node.infos([type, failed])</code><br />
+Return a list of infos created by the node. If specified, <code>type</code> filters by class. By default failed infos are excluded, to include only failed infos use <em>failed=True</em>, for all infos use <em>failed="all"</em>.</p>
+<p><code>Node.mutate(info_in)</code>
 Mutate the <em>info_in</em> - create a new info of the same type with its contents determined by info_in.mutated_contents() and then create a Mutation (a subclass of Transformation) linking the two.</p>
-<p>node.<code>neighbors</code>([<em>type</em>, <em>direction</em>]) <br />
-Return a list of other nodes with an immediate connection to this node. If specified, <em>type</em> filters neighboring nodes by class. <em>Direction</em> specifies the direction of the connection and can be "to", "from", "both" or "either"; the default value is "to". Note that a <em>failed</em> argument should not be passed to node.neighbors() and the function only returns not failed nodes connected by not failed vectors.</p>
-<p>node.<code>receive</code>([<em>what</em>]) <br />
+<p><code>Node.neighbors([type, direction])</code>
+Return a list of other nodes with an immediate connection to this node. If specified, <code>type</code> filters neighboring nodes by class. <em>Direction</em> specifies the direction of the connection and can be "to", "from", "both" or "either"; the default value is "to". Note that a <code>failed</code> argument should not be passed to node.neighbors() and the function only returns not failed nodes connected by not failed vectors.</p>
+<p><code>Node.receive([what])</code><br />
 Receive incoming transmissions. <em>What</em> specifies what to receive. It can be a specific transmission. If <em>what</em> is not specified all pending transmissions are received. Received transmissions have their status set to "received" and their receive_time set to now. A list of all the infos associated with the received transmissions is passed to node.update().</p>
-<p>node<code>.received_infos</code>([<em>type</em>]) <br />
-Return a list of infos received by the node (i.e., transmitted to the node and received). If specified, <em>type</em> filters by class. Note that this method does not take a <em>failed</em> argument and it returns all received infos (whether failed or not) whose associcated transmissions are not failed.</p>
-<p>node.<code>replicate</code>(<em>info_in</em>) <br />
+<p><code>Node.received_infos([type])</code> <br />
+Return a list of infos received by the node (i.e., transmitted to the node and received). If specified, <code>type</code> filters by class. Note that this method does not take a <code>failed</code> argument and it returns all received infos (whether failed or not) whose associcated transmissions are not failed.</p>
+<p><code>Node.replicate(info_in)</code> <br />
 Replicate the <em>info_in</em> - create a new info of the same type with the same contents and then create a Replication (a subclass of Transformation) linking the two.</p>
-<p>node<code>.transformations</code>([<em>type</em>, <em>failed</em>]) <br />
-Return a list of transformations created by the node. If specified, <em>type</em> filters by class. By default failed transformations are excluded, to include only failed transformations use <em>failed=True</em>, for all transformations use <em>failed="all"</em>.</p>
-<p>node<code>.transmissions</code>([<em>direction</em>, <em>status, failed</em>]) <br />
+<p><code>Node.transformations([type, failed])</code> <br />
+Return a list of transformations created by the node. If specified, <code>type</code> filters by class. By default failed transformations are excluded, to include only failed transformations use <em>failed=True</em>, for all transformations use <em>failed="all"</em>.</p>
+<p><code>Node.transmissions([direction, status, failed])</code> <br />
 Return a list of transmissions sent/received by the node. <em>Direction</em> can be "outgoing", "incoming" or "all (default is "outgoing"). <em>Status</em> can be "pending", "received", or "all" (default is "all"). By default failed transmissions are excluded, to include only failed transmissions use <em>failed=True</em>, for all transmissions use <em>failed="all"</em>.</p>
-<p>node.<code>transmit</code>([<em>what</em>, <em>to_whom</em>]) <br />
+<p><code>Node.transmit([what, to_whom])</code> <br />
 Return a (list of) newly created transmission(s) of <em>what</em> to <em>to_whom</em>. <em>What</em> specifies what to send, it can be an info created by the node, a list of infos created by the node, a class of info (in which case all infos of that class created by the node are sent), None (in which case the node._what() is called to determine what to send), or a (nested) list of any of the above. <em>To_whom</em> specifies which node(s) the transmission(s) should be sent to, it can be a Node, a list of Nodes, a class of Node (in which case all neighbors of that type will be sent to), None (in which case node.to_whom() is called to determine who to send to) or a (nested) list of any of the above. Nodes can only transmit infos they have made and can only transmit to nodes they are connected to.</p>
-<p>node.<code>update</code>(<em>infos</em>) <br />
+<p><code>Node.update(infos)</code> <br />
 Process received infos, called by node.receive(). By default this method does nothing. It is intended to be overwritten to provide subclasses of node new behaviors that occur automatically when they receive transmissions.</p>
-<p>node<code>.vectors</code>([<em>direction</em>, <em>failed</em>]) <br />
+<p><code>Node.vectors([direction, failed])</code> <br />
 Return a list of vectors connected to the node. Direction specfies whether to include vectors that originate from or arrive at the node. It defaults to "all", but can also be "incoming" or "outgoing". By default failed vectors are excluded, to include only failed vectors use <em>failed=True</em>, for all vectors use <em>failed="all"</em>.</p>
 <h3 id="vector">Vector</h3>
 <p>A vector is a directional link between two nodes. Nodes connected by a vector can send Transmissions to each other, but because Vectors have a direction, two Vectors are needed for bi-directional Transmissions.</p>
 <h4 id="columns_2">Columns</h4>
 <ul>
-<li><em>id</em> - a unique number for every entry. 1, 2, 3 and so on...</li>
-<li><em>creation_time</em> - the time at which the Vector was created.</li>
-<li><em>property1</em> - a generic column that can be used to store experiment specific details in String form.</li>
-<li><em>property2</em>, <em>3</em>, <em>4</em> and <em>5</em> - same as above.</li>
-<li><em>failed</em> - boolean indicating whether the Vector has failed which prompts Wallace to ignore it unless specified otherwise. Objects are usually failed to indicate something has gone wrong.</li>
-<li><em>time_of_death</em> - the time at which failing occurred.</li>
-<li><em>type</em> - a String giving the name of the class. Defaults to "vector". This allows subclassing.</li>
-<li><em>origin_id</em> - the id of the Node at which the vector originates.</li>
-<li><em>destination_id</em> - the id of the Node at which the vector terminates.</li>
-<li><em>network_id</em> - the id of the network the vector is in.</li>
+<li><code>id</code> - a unique number for every entry. 1, 2, 3 and so on...</li>
+<li><code>creation_time</code> - the time at which the Vector was created.</li>
+<li><code>property1</code> - a generic column that can be used to store experiment specific details in String form.</li>
+<li><code>property2</code>, <code>3</code>, <code>4</code> and <code>5</code> - same as above.</li>
+<li><code>failed</code> - boolean indicating whether the Vector has failed which prompts Wallace to ignore it unless specified otherwise. Objects are usually failed to indicate something has gone wrong.</li>
+<li><code>time_of_death</code> - the time at which failing occurred.</li>
+<li><code>type</code> - a String giving the name of the class. Defaults to "vector". This allows subclassing.</li>
+<li><code>origin_id</code> - the id of the Node at which the vector originates.</li>
+<li><code>destination_id</code> - the id of the Node at which the vector terminates.</li>
+<li><code>network_id</code> - the id of the network the vector is in.</li>
 </ul>
 <h4 id="relationships_2">Relationships</h4>
 <ul>
-<li><em>origin</em> - the Node at which the vector originates.</li>
-<li><em>destination</em> - the Node at which the vector terminates.</li>
-<li><em>network</em> - the network the vector is in.</li>
-<li><em>all_transmissions</em> - all Transmissions sent along the Vector.</li>
+<li><code>origin</code> - the Node at which the vector originates.</li>
+<li><code>destination</code> - the Node at which the vector terminates.</li>
+<li><code>network</code> - the network the vector is in.</li>
+<li><code>all_transmissions</code> - all Transmissions sent along the Vector.</li>
 </ul>
 <h4 id="methods_1">Methods</h4>
-<p>vector.<code>__repr__()</code> <br />
+<p><code>Vector.__repr__()</code> <br />
 Return a simple string representation of the vector.</p>
-<p>vector<code>.__json__()</code> <br />
+<p><code>Vector.__json__()</code> <br />
 Return a JSON object with all the attributes of the vector.</p>
-<p>vector<code>.fail()</code> <br />
+<p><code>Vector.fail()</code> <br />
 Set vector.failed to True and vector.time_of_death to now. Instruct all transmissions sent along this vector to fail.</p>
-<p>vector<code>.transmissions</code>([<em>status</em>]) <br />
+<p><code>Vector.transmissions([status])</code> <br />
 Return a list of transmissions sent along the vector. <em>Status</em> can be "pending", "received", or "all" (default is "all").</p>
 <h3 id="info">Info</h3>
 <p>An Info is a piece of information created by a Node. It can be sent along Vectors as part of a Transmission.</p>
 <h4 id="columns_3">Columns</h4>
 <ul>
-<li><em>id</em> - a unique number for every entry. 1, 2, 3 and so on...</li>
-<li><em>creation_time</em> - the time at which the Info was created.</li>
-<li><em>property1</em> - a generic column that can be used to store experiment specific details in String form.</li>
-<li><em>property2</em>, <em>3</em>, <em>4</em> and <em>5</em> - same as above.</li>
-<li><em>failed</em> - boolean indicating whether the Info has failed which prompts Wallace to ignore it unless specified otherwise. Objects are usually failed to indicate something has gone wrong.</li>
-<li><em>time_of_death</em> - the time at which failing occurred.</li>
-<li><em>type</em> - a String giving the name of the class. Defaults to "info". This allows subclassing.</li>
-<li><em>origin_id</em> - the id of the Node that created the info.</li>
-<li><em>network_id</em> - the id of the network the info is in.</li>
-<li><em>contents</em> - the contents of the info. Must be stored as a String.</li>
+<li><code>id</code> - a unique number for every entry. 1, 2, 3 and so on...</li>
+<li><code>creation_time</code> - the time at which the Info was created.</li>
+<li><code>property1</code> - a generic column that can be used to store experiment specific details in String form.</li>
+<li><code>property2</code>, <code>3</code>, <code>4</code> and <code>5</code> - same as above.</li>
+<li><code>failed</code> - boolean indicating whether the Info has failed which prompts Wallace to ignore it unless specified otherwise. Objects are usually failed to indicate something has gone wrong.</li>
+<li><code>time_of_death</code> - the time at which failing occurred.</li>
+<li><code>type</code> - a String giving the name of the class. Defaults to "info". This allows subclassing.</li>
+<li><code>origin_id</code> - the id of the Node that created the info.</li>
+<li><code>network_id</code> - the id of the network the info is in.</li>
+<li><code>contents</code> - the contents of the info. Must be stored as a String.</li>
 </ul>
 <h4 id="relationships_3">Relationships</h4>
 <ul>
-<li><em>origin</em> - the Node that created the info.</li>
-<li><em>network</em> - the network the info is in.</li>
-<li><em>all_transmissions</em> - all Transmissions of this Info.</li>
-<li><em>transformation_applied_to</em> - all Transformations of which this info is the info_in</li>
-<li><em>transformation_whence</em> - all Transformations of which this info is the info_out</li>
+<li><code>origin</code> - the Node that created the info.</li>
+<li><code>network</code> - the network the info is in.</li>
+<li><code>all_transmissions</code> - all Transmissions of this Info.</li>
+<li><code>transformation_applied_to</code> - all Transformations of which this info is the info_in</li>
+<li><code>transformation_whence</code> - all Transformations of which this info is the info_out</li>
 </ul>
 <h4 id="methods_2">Methods</h4>
-<p>info.<code>__repr__()</code> <br />
+<p><code>Info.__repr__()</code> <br />
 Return a simple string representation of the info.</p>
-<p>info.<code>__json__()</code> <br />
+<p><code>Info.__json__()</code> <br />
 Return a JSON object with all the attributes of the info.</p>
-<p>info.<code>_mutated_contents()</code> <br />
+<p><code>Info._mutated_contents()</code> <br />
 Return a string that will be the contents of an info created via a mutation of this info.</p>
-<p>info<code>.fail()</code> <br />
+<p><code>Info.fail()</code> <br />
 Set info.failed to True and info.time_of_death to now. Instruct all transmissions and transformations involving this info to fail.</p>
-<p>info<code>.transformations</code>([<em>relationship</em>]) <br />
+<p><code>Info.transformations([relationship])</code> 
 Return a list of transformations involving this info. <em>Relationship</em> can be "parent" (in which case only transformations where the info is the <em>info_in</em> are returned), "child" (in which case only transformations where the info is the <em>info_out</em> are returned) or "all" (in which case any transformations where the info is the <em>info_out</em> or the <em>info_in</em> are returned). The default is "all"</p>
-<p>info<code>.transmissions</code>([<em>status</em>]) <br />
+<p><code>Info.transmissions([status])</code>
 Return a list of transmissions of this info. <em>Status</em> can be "pending", "received", or "all" (default is "all").</p>
 <h3 id="transmission">Transmission</h3>
 <p>A transmission represents an instance of an Info being sent along a Vector. Transmissions are not necessarily received when they are sent (like an email) and must also be received by the Node they are sent to.</p>
 <h4 id="columns_4">Columns</h4>
 <ul>
-<li><em>id</em> - a unique number for every entry. 1, 2, 3 and so on...</li>
-<li><em>creation_time</em> - the time at which the Transmission was created.</li>
-<li><em>property1</em> - a generic column that can be used to store experiment specific details in String form.</li>
-<li><em>property2</em>, <em>3</em>, <em>4</em> and <em>5</em> - same as above.</li>
-<li><em>failed</em> - boolean indicating whether the Transmission has failed which prompts Wallace to ignore it unless specified otherwise. Objects are usually failed to indicate something has gone wrong.</li>
-<li><em>time_of_death</em> - the time at which failing occurred.</li>
-<li><em>type</em> - a String giving the name of the class. Defaults to "transmission". This allows subclassing.</li>
-<li><em>origin_id</em> - the id of the Node that sent the transmission.</li>
-<li><em>destination_id</em> - the id of the Node that the transmission was sent to.</li>
+<li><code>id</code> - a unique number for every entry. 1, 2, 3 and so on...</li>
+<li><code>creation_time</code> - the time at which the Transmission was created.</li>
+<li><code>property1</code> - a generic column that can be used to store experiment specific details in String form.</li>
+<li><code>property2</code>, <code>3</code>, <code>4</code> and <code>5</code> - same as above.</li>
+<li><code>failed</code> - boolean indicating whether the Transmission has failed which prompts Wallace to ignore it unless specified otherwise. Objects are usually failed to indicate something has gone wrong.</li>
+<li><code>time_of_death</code> - the time at which failing occurred.</li>
+<li><code>type</code> - a String giving the name of the class. Defaults to "transmission". This allows subclassing.</li>
+<li><code>origin_id</code> - the id of the Node that sent the transmission.</li>
+<li><code>destination_id</code> - the id of the Node that the transmission was sent to.</li>
 <li><em>vector_id</em> - the id of the vector the info was sent along.</li>
-<li><em>network_id</em> - the id of the network the transmission is in.</li>
+<li><code>network_id</code> - the id of the network the transmission is in.</li>
 <li><em>info_id</em> - the id of the info that was transmitted.</li>
 <li><em>receive_time</em> - the time at which the transmission was received.</li>
 <li><em>status</em> - the status of the transmission, can be:<ul>
@@ -239,119 +239,119 @@ Return a list of transmissions of this info. <em>Status</em> can be "pending", "
 </ul>
 <h4 id="relationships_4">Relationships</h4>
 <ul>
-<li><em>origin</em> - the Node that sent the transmission.</li>
-<li><em>destination</em> - the Node that the transmission was sent to.</li>
-<li><em>vector</em> - the vector the info was sent along.</li>
-<li><em>network</em> - the network the transmission is in.</li>
-<li><em>info</em> - the info that was transmitted.</li>
+<li><code>origin</code> - the Node that sent the transmission.</li>
+<li><code>destination</code> - the Node that the transmission was sent to.</li>
+<li><code>vector</code> - the vector the info was sent along.</li>
+<li><code>network</code> - the network the transmission is in.</li>
+<li><code>info</code> - the info that was transmitted.</li>
 </ul>
 <h4 id="methods_3">Methods</h4>
-<p>transmission.<code>__repr__()</code> <br />
+<p><code>Transmission.__repr__()</code> <br />
 Return a simple string representation of the transmission.</p>
-<p>transmission.<code>__json__()</code> <br />
+<p><code>Transmission.__json__()</code> <br />
 Return a JSON object with all the attributes of the transmission.</p>
-<p>transmission.<code>fail()</code> <br />
+<p><code>Transmission.fail()</code> <br />
 Set transmission.failed to True and transmission.time_of_death to now.</p>
-<p>transmission.<code>mark_received()</code> <br />
+<p><code>Transmission.mark_received()</code> <br />
 Set transmission.status to "received" and transmission.receive_time to now.</p>
 <h3 id="transformation">Transformation</h3>
 <p>A Transformation is a relationship between two Infos. It is similar to how a Vector indicates a relationship between two Nodes, but whereas a Vector allows Nodes to Transmit to each other, Transformations don't allow Infos to do anything new. Instead they are a form of book-keeping allowing you to keep track of relationships between various Infos.</p>
 <h4 id="columns_5">Columns</h4>
 <ul>
-<li><em>id</em> - a unique number for every entry. 1, 2, 3 and so on...</li>
-<li><em>creation_time</em> - the time at which the Transformation was created.</li>
-<li><em>property1</em> - a generic column that can be used to store experiment specific details in String form.</li>
-<li><em>property2</em>, <em>3</em>, <em>4</em> and <em>5</em> - same as above.</li>
-<li><em>failed</em> - boolean indicating whether the Transformation has failed which prompts Wallace to ignore it unless specified otherwise. Objects are usually failed to indicate something has gone wrong.</li>
-<li><em>time_of_death</em> - the time at which failing occurred.</li>
-<li><em>type</em> - a String giving the name of the class. Defaults to "transformation". This allows subclassing.</li>
-<li><em>node_id</em> - the id of the Node that did the transformation.</li>
-<li><em>network_id</em> - the id of the network the transmission is in.</li>
-<li><em>info_in_id</em> - the id of the info that was transformed.</li>
-<li><em>info_out_id</em> - the id of the info produced by the transformation.</li>
+<li><code>id</code> - a unique number for every entry. 1, 2, 3 and so on...</li>
+<li><code>creation_time</code> - the time at which the Transformation was created.</li>
+<li><code>property1</code> - a generic column that can be used to store experiment specific details in String form.</li>
+<li><code>property2</code>, <code>3</code>, <code>4</code> and <code>5</code> - same as above.</li>
+<li><code>failed</code> - boolean indicating whether the Transformation has failed which prompts Wallace to ignore it unless specified otherwise. Objects are usually failed to indicate something has gone wrong.</li>
+<li><code>time_of_death</code> - the time at which failing occurred.</li>
+<li><code>type</code> - a String giving the name of the class. Defaults to "transformation". This allows subclassing.</li>
+<li><code>node_id</code> - the id of the Node that did the transformation.</li>
+<li><code>network_id</code> - the id of the network the transmission is in.</li>
+<li><code>info_in_id</code> - the id of the info that was transformed.</li>
+<li><code>info_out_id</code> - the id of the info produced by the transformation.</li>
 </ul>
 <h4 id="relationships_5">Relationships</h4>
 <ul>
-<li><em>node</em> - the Node that did the transformation.</li>
-<li><em>network</em> - the network the transmission is in.</li>
+<li><code>node</code> - the Node that did the transformation.</li>
+<li><code>network</code> - the network the transmission is in.</li>
 <li><em>info_in</em> - the info that was transformed.</li>
 <li><em>info_out</em> - the info produced by the transformation.</li>
 </ul>
-<p>transformation.<code>__repr__()</code> <br />
+<p><code>Transformation.__repr__()</code> <br />
 Return a simple string representation of the transformation.</p>
-<p>transformation.<code>__json__()</code> <br />
+<p><code>Transformation.__json__()</code> <br />
 Return a JSON object with all the attributes of the transformation.</p>
-<p>transformation.<code>fail()</code> <br />
+<p><code>Transformation.fail()</code> <br />
 Set transformation.failed to True and transformation.time_of_death to now.</p>
 <h3 id="participant">Participant</h3>
 <p>The Participant object corresponds to a real world participant. Each person who takes part will have a corresponding entry in the Participant table. Participants can be associated with Nodes and Questions.</p>
 <h4 id="columns_6">Columns</h4>
 <ul>
-<li><em>id</em> - a unique number for every entry. 1, 2, 3 and so on...</li>
-<li><em>creation_time</em> - the time at which the Participant was created.</li>
-<li><em>property1</em> - a generic column that can be used to store experiment specific details in String form.</li>
-<li><em>property2</em>, <em>3</em>, <em>4</em> and <em>5</em> - same as above.</li>
-<li><em>failed</em> - boolean indicating whether the Participant has failed which prompts Wallace to ignore it unless specified otherwise. Objects are usually failed to indicate something has gone wrong.</li>
-<li><em>time_of_death</em> - the time at which failing occurred.</li>
-<li><em>type</em> - a String giving the name of the class. Defaults to "participant". This allows subclassing.</li>
-<li><em>worker_id</em> - A String, the worker id of the participant.</li>
-<li><em>assignment_id</em> - A String, the assignment id of the participant.</li>
-<li><em>unique_id</em> - A String, a concatenation of the worker_id and assignment_id, used by psiTurk.</li>
-<li><em>hit_id</em> - A String, the id of the hit the participant is working on.</li>
-<li><em>mode</em> - A String, the mode in which Wallace is running: live, sandbox or debug.</li>
-<li><em>end_time</em> - The time at which the participant finished.</li>
-<li><em>base_pay</em> - The amount the participant was paid for finishing the experiment.</li>
-<li><em>bonus</em> - the amount the participant was paid as a bonus.</li>
-<li><em>status</em> - String representing the current status of the participant, can be:<ul>
-<li><em>working</em> - participant is working</li>
-<li><em>submitted</em> - participant has submitted their work</li>
-<li><em>approved</em> - their work has been approved and they have been paid</li>
-<li><em>rejected</em> - their work has been rejected</li>
-<li><em>returned</em> - they returned the hit before finishing</li>
-<li><em>abandoned</em> - they ran out of time</li>
-<li><em>did_not_attend</em> - the participant finished, but failed the attention check</li>
-<li><em>bad_data</em> - the participant finished, but their data was malformed</li>
-<li><em>missing notification</em> - this indicates that Wallace has inferred that an MTurk notification corresponding to this participant failed to arrive. This is an uncommon, but potentially serious issue.</li>
+<li><code>id</code> - a unique number for every entry. 1, 2, 3 and so on...</li>
+<li><code>creation_time</code> - the time at which the Participant was created.</li>
+<li><code>property1</code> - a generic column that can be used to store experiment specific details in String form.</li>
+<li><code>property2</code>, <code>3</code>, <code>4</code> and <code>5</code> - same as above.</li>
+<li><code>failed</code> - boolean indicating whether the Participant has failed which prompts Wallace to ignore it unless specified otherwise. Objects are usually failed to indicate something has gone wrong.</li>
+<li><code>time_of_death</code> - the time at which failing occurred.</li>
+<li><code>type</code> - a String giving the name of the class. Defaults to "participant". This allows subclassing.</li>
+<li><code>worker_id</code> - A String, the worker id of the participant.</li>
+<li><code>assignment_id</code> - A String, the assignment id of the participant.</li>
+<li><code>unique_id</code> - A String, a concatenation of the worker_id and assignment_id, used by psiTurk.</li>
+<li><code>hit_id</code> - A String, the id of the hit the participant is working on.</li>
+<li><code>mode</code> - A String, the mode in which Wallace is running: live, sandbox or debug.</li>
+<li><code>end_time</code> - The time at which the participant finished.</li>
+<li><code>base_pay</code> - The amount the participant was paid for finishing the experiment.</li>
+<li><code>bonus</code> - the amount the participant was paid as a bonus.</li>
+<li><code>status</code> - String representing the current status of the participant, can be:<ul>
+<li><code>working</code> - participant is working</li>
+<li><code>submitted</code> - participant has submitted their work</li>
+<li><code>approved</code> - their work has been approved and they have been paid</li>
+<li><code>rejected</code> - their work has been rejected</li>
+<li><code>returned</code> - they returned the hit before finishing</li>
+<li><code>abandoned</code> - they ran out of time</li>
+<li><code>did_not_attend</code> - the participant finished, but failed the attention check</li>
+<li><code>bad_data</code> - the participant finished, but their data was malformed</li>
+<li><code>missing notification</code> - this indicates that Wallace has inferred that an MTurk notification corresponding to this participant failed to arrive. This is an uncommon, but potentially serious issue.</li>
 </ul>
 </li>
 </ul>
 <h4 id="relationships_6">Relationships</h4>
 <ul>
-<li><em>all_questions</em> - all the questions associated with this participant.</li>
-<li><em>all_nodes</em> - all the Nodes associated with this participant.</li>
+<li><code>all_questions</code> - all the questions associated with this participant.</li>
+<li><code>all_nodes</code> - all the Nodes associated with this participant.</li>
 </ul>
 <h4 id="methods_4">Methods</h4>
-<p>participant<code>.__json__()</code> <br />
+<p><code>Participant.__json__()</code> <br />
 Return a JSON object with all the attributes of the participant.</p>
-<p>participant<code>.fail()</code> <br />
+<p><code>Participant.fail()</code> <br />
 Set participant.failed to True and participant.time_of_death to now. Instruct all not-failed nodes associated with the participant to fail.</p>
-<p>participant.<code>infos</code>([<em>type</em>, <em>failed</em>]) <br />
-Return a list of infos produced by nodes associated with the participant. If specified, <em>type</em> filters by class. By default, failed infos are excluded, to include only failed nodes use <em>failed=True</em>, for all nodes use <em>failed="all"</em>. Note that failed filters the infos, not the nodes - infos from all nodes (whether failed or not) can be returned.</p>
-<p>participant.<code>nodes</code>([<em>type</em>, <em>failed</em>]) <br />
-Return a list of nodes associated with the participant. If specified, <em>type</em> filters by class. By default failed nodes are excluded, to include only failed nodes use <em>failed=True</em>, for all nodes use <em>failed="all"</em>.</p>
-<p>participant.<code>questions</code>([<em>type</em>]) <br />
-Return a list of questions associated with the participant. If specified, <em>type</em> filters by class.</p>
+<p><code>Participant.infos</code>([<code>type</code>, <code>failed</code>]) <br />
+Return a list of infos produced by nodes associated with the participant. If specified, <code>type</code> filters by class. By default, failed infos are excluded, to include only failed nodes use <em>failed=True</em>, for all nodes use <em>failed="all"</em>. Note that failed filters the infos, not the nodes - infos from all nodes (whether failed or not) can be returned.</p>
+<p><code>Participant.nodes</code>([<code>type</code>, <code>failed</code>]) <br />
+Return a list of nodes associated with the participant. If specified, <code>type</code> filters by class. By default failed nodes are excluded, to include only failed nodes use <em>failed=True</em>, for all nodes use <em>failed="all"</em>.</p>
+<p><code>Participant.questions</code>([<code>type</code>]) <br />
+Return a list of questions associated with the participant. If specified, <code>type</code> filters by class.</p>
 <h3 id="question">Question</h3>
 <p>A Question is a way to store information associated with a Participant as opposed to a Node (Infos are made by Nodes, not Participants). Questions are generally useful for storing responses debriefing questions etc.</p>
 <h4 id="columns_7">Columns</h4>
 <ul>
-<li><em>id</em> - a unique number for every entry. 1, 2, 3 and so on...</li>
-<li><em>creation_time</em> - the time at which the Question was created.</li>
-<li><em>property1</em> - a generic column that can be used to store experiment specific details in String form.</li>
-<li><em>property2</em>, <em>3</em>, <em>4</em> and <em>5</em> - same as above.</li>
-<li><em>failed</em> - boolean indicating whether the Question has failed which prompts Wallace to ignore it unless specified otherwise. Objects are usually failed to indicate something has gone wrong.</li>
-<li><em>time_of_death</em> - the time at which failing occurred.</li>
-<li><em>type</em> - a String giving the name of the class. Defaults to "question". This allows subclassing.</li>
-<li><em>question_id</em> - a number. E.g., each participant might complete three questions numbered 1, 2, and 3.</li>
-<li><em>question</em> - the text of the question.</li>
-<li><em>response</em> - the participant's response. Stored as a string.</li>
+<li><code>id</code> - a unique number for every entry. 1, 2, 3 and so on...</li>
+<li><code>creation_time</code> - the time at which the Question was created.</li>
+<li><code>property1</code> - a generic column that can be used to store experiment specific details in String form.</li>
+<li><code>property2</code>, <code>3</code>, <code>4</code> and <code>5</code> - same as above.</li>
+<li><code>failed</code> - boolean indicating whether the Question has failed which prompts Wallace to ignore it unless specified otherwise. Objects are usually failed to indicate something has gone wrong.</li>
+<li><code>time_of_death</code> - the time at which failing occurred.</li>
+<li><code>type</code> - a String giving the name of the class. Defaults to "question". This allows subclassing.</li>
+<li><code>question_id</code> - a number. E.g., each participant might complete three questions numbered 1, 2, and 3.</li>
+<li><code>question</code> - the text of the question.</li>
+<li><code>response</code> - the participant's response. Stored as a string.</li>
 </ul>
 <h4 id="relationships_7">Relationships</h4>
 <ul>
-<li><em>participant</em> - the participant who answered the question.</li>
+<li><code>participant</code> - the participant who answered the question.</li>
 </ul>
 <h4 id="methods_5">Methods</h4>
-<p>question<code>.fail()</code> <br />
+<p><code>Question.fail()</code> <br />
 Set question.failed to True and question.time_of_death to now.</p>
             
           
@@ -572,7 +572,7 @@ Set question.failed to True and question.time_of_death to now.</p>
 
   <!--
   MkDocs version      : 0.15.3
-  Docs Build Date UTC : 2016-08-09 02:01:13.897499
+  Docs Build Date UTC : 2016-08-09 02:15:25.772011
   -->
 </body>
 </html>
