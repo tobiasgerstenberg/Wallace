@@ -61,15 +61,15 @@
 <li><code>networks_transformations</code> - all the Transformations in the network.</li>
 </ul>
 <h4 id="functions">Functions</h4>
-<p>network.<code>__repr__()</code> <br />
+<p><code>Network.__repr__()</code> <br />
 Return a simple string representation of the network.</p>
-<p>network<code>.__json__()</code> <br />
+<p><code>Network.__json__()</code> <br />
 Return a json object with all the attributes of the network.</p>
-<p>network<code>.calculate_full()</code> <br />
+<p><code>Network.calculate_full()</code> <br />
 Update attribute network.full to reflect current network size.</p>
-<p>network<code>.fail()</code> <br />
-Set network.failed to True and network.time_of_death to now. Instruct all not-failed nodes in the network to fail.</p>
-<p>network<code>.infos</code>([<em>type, failed</em>]) <br />
+<p><code>Network.fail()</code> <br />
+Set <code>network.failed</code> to True and <code>network.time_of_death</code> to <code>now</code>. Instruct all not-failed nodes in the network to fail.</p>
+<p><code>Network.infos([type, failed])</code> <br />
 Return a list of infos in the network (i.e., infos made by nodes in the network). If specified, <em>type</em> filters by class. By default failed infos are excluded, to include only failed infos use <em>failed=True</em>, for all infos use <em>failed="all"</em>.</p>
 <p>network<code>.latest_transmission_recipient()</code> <br />
 Return the node that most recently received a transmission.</p>
@@ -572,7 +572,7 @@ Set question.failed to True and question.time_of_death to now.</p>
 
   <!--
   MkDocs version      : 0.15.3
-  Docs Build Date UTC : 2016-08-09 01:57:32.545858
+  Docs Build Date UTC : 2016-08-09 01:59:08.008998
   -->
 </body>
 </html>
