@@ -35,7 +35,7 @@
         <div class="body" role="main">
           
             <p>The Wallace API allows the experiment frontend to communicate with the backend. Many of these routes correspond to specific functions of Wallace's <a href="../Classes/">classes</a>, particularly <code>Node</code>. For example, nodes have a <code>connect</code> method that creates new vectors between nodes and there is a corresponding <code>connect/</code> route that allows the frontend to call this method.</p>
-<h4 id="miscellaneous-routes">Miscellaneous routes</h4>
+<h2 id="miscellaneous-routes">Miscellaneous routes</h2>
 <p><code>/ad_address/&lt;mode&gt;/&lt;hit_id&gt;</code> [GET] <br />
 Used to get the address of the experiment on the psiTurk server and to return participants to MTurk upon completion of the experiment. This route is pinged automatically by the function <code>submit_assignment</code> in wallace.js.</p>
 <p><code>/&lt;directory&gt;/&lt;page&gt;</code> [GET] <br />
@@ -44,7 +44,7 @@ Returns the html page with the name <code>&lt;page&gt;</code> from the directory
 Returns a summary of the statuses of Participants.</p>
 <p><code>/&lt;page&gt;</code> [GET] <br />
 Returns the html page with the name <code>&lt;page&gt;</code>.</p>
-<h4 id="experiment-routes">Experiment routes</h4>
+<h2 id="experiment-routes">Experiment routes</h2>
 <p><code>/experiment_property/&lt;property&gt;</code> [GET] <br />
 Returns the value of the requested property as a JSON <code>&lt;property&gt;</code>.</p>
 <p><code>/info/&lt;node_id&gt;/&lt;info_id&gt;</code> [GET] <br />
@@ -185,7 +185,7 @@ Create a transformation from <code>info_in</code> to <code>info_out</code> at th
 
   <!--
   MkDocs version      : 0.15.3
-  Docs Build Date UTC : 2016-08-09 01:47:13.827513
+  Docs Build Date UTC : 2016-08-09 01:47:51.328707
   -->
 </body>
 </html>
