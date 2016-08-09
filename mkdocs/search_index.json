@@ -2,12 +2,12 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Wallace\n\n\nWallace is a platform for conducting research on experimental cultural evolution. Its namesake is Alfred Russel Wallace, a British naturalist and the oft-ignored codiscoverer of evolution by natural selection. You can use Wallace to create new experiments or to reproduce existing experiments.\n\n\nWant to take Wallace for a test drive? Start \nhere\n.\n\n\nWant to learn more? Try \nhere\n.\n\n\nFeel like contributing to Wallace? Great! Start \nhere\n.", 
+            "text": "Wallace\n\n\nWallace is a platform for conducting research on experimental cultural evolution. Its namesake is Alfred Russel Wallace, a British naturalist and the oft-ignored codiscoverer of evolution by natural selection. You can use Wallace to create new experiments or to reproduce existing experiments.\n\n\nWant to take Wallace for a test drive? Start \nhere\n.\n\n\nFeel like contributing to Wallace? Great! Start \nhere\n.", 
             "title": "Introduction"
         }, 
         {
             "location": "/#wallace", 
-            "text": "Wallace is a platform for conducting research on experimental cultural evolution. Its namesake is Alfred Russel Wallace, a British naturalist and the oft-ignored codiscoverer of evolution by natural selection. You can use Wallace to create new experiments or to reproduce existing experiments.  Want to take Wallace for a test drive? Start  here .  Want to learn more? Try  here .  Feel like contributing to Wallace? Great! Start  here .", 
+            "text": "Wallace is a platform for conducting research on experimental cultural evolution. Its namesake is Alfred Russel Wallace, a British naturalist and the oft-ignored codiscoverer of evolution by natural selection. You can use Wallace to create new experiments or to reproduce existing experiments.  Want to take Wallace for a test drive? Start  here .  Feel like contributing to Wallace? Great! Start  here .", 
             "title": "Wallace"
         }, 
         {
@@ -227,12 +227,12 @@
         }, 
         {
             "location": "/demos/function-learning/", 
-            "text": "Culturally transmitted knowledge changes as it is transmitted from person to person. Some of the most striking instances of this process come from cases of language acquisition. For example, in Nicaragua, a community of deaf children transformed a fragmentary pidgin into a language with rich grammatical struc- ture by learning from each other (Kegl and Iwata, 1989; Senghas and Coppola, 2001). Languages, legends, and social norms are all shaped by the processes of cultural transmission (Cavalli-Sforza, 1981; Boyd and Richerson, 1988; Kirby, 1999, 2001; Briscoe, 2002).\n\n\nLaboratory studies of cultural transmission often use the method of \u201citerated learning\u201d, which has roots in \nBartlett\u2019s experiments\n. In the iterated learning paradigm, information is passed along a chain of individuals, from one to the next, much like in the children\u2019s game Telephone. Iterated learning paradigms for the transmission of language and other forms of knowledge have been developed, too (Kalish et al., 2007; Griffiths and Kalish, 2007; Griffiths et al., 2008a). For example, in one study, participants learned the relationship between two continuous variables (\u201cfunction learning\u201d) and were tested on what they had discovered (Kalish et al., 2007). Responses on the test were then used to train the next participant in the chain. Kalish et al. (2007) found that, over time, knowledge transmitted through the chain reverts to the prior beliefs of the individual learners.\n\n\n\n\nKalish, M. L., Griffiths, T. L., \n Lewandowsky, S. (2007). Iterated learning: Intergenerational knowledge transmission reveals inductive biases. Psychonomic Bulletin and Review, 14, 288-294.\n\n\nDownload the demo\n.", 
+            "text": "Culturally transmitted knowledge changes as it is transmitted from person to person. Some of the most striking instances of this process come from cases of language acquisition. For example, in Nicaragua, a community of deaf children transformed a fragmentary pidgin into a language with rich grammatical struc- ture by learning from each other (Kegl and Iwata, 1989; Senghas and Coppola, 2001). Languages, legends, and social norms are all shaped by the processes of cultural transmission (Cavalli-Sforza, 1981; Boyd and Richerson, 1988; Kirby, 1999, 2001; Briscoe, 2002).\n\n\nLaboratory studies of cultural transmission often use the method of \u201citerated learning\u201d, which has roots in \nBartlett\u2019s experiments\n. In the iterated learning paradigm, information is passed along a chain of individuals, from one to the next, much like in the children\u2019s game Telephone. Iterated learning paradigms for the transmission of language and other forms of knowledge have been developed, too (Kalish et al., 2007; Griffiths and Kalish, 2007; Griffiths et al., 2008a). For example, in one study, participants learned the relationship between two continuous variables (\u201cfunction learning\u201d) and were tested on what they had discovered (Kalish et al., 2007). Responses on the test were then used to train the next participant in the chain. Kalish et al. (2007) found that, over time, knowledge transmitted through the chain reverts to the prior beliefs of the individual learners.\n\n\nKalish, M. L., Griffiths, T. L., \n Lewandowsky, S. (2007). Iterated learning: Intergenerational knowledge transmission reveals inductive biases. Psychonomic Bulletin and Review, 14, 288-294.\n\n\nDownload the demo\n.", 
             "title": "Transmitting functions"
         }, 
         {
             "location": "/demos/mcmcp/", 
-            "text": "This is the readme for Bartlett's 1932 experiment on iterated learning. It used 'The War of the Ghosts' story.\n\n\nBartlett, F. C. (1932). Remembering. Cambridge: Cambridge University Press.", 
+            "text": "Markov Chain Monte Carlo with People (MCMCP) is a method for uncovering  mental representations that exploits an equivalence between a model of\nhuman choice behavior and an element of an MCMC algorithm. This demo replicates Experiment 3 of Sanborn, Griffiths, \n Shiffrin (2010), which applies MCMCP to four natural categories, providing estimates of the distributions over animal shapes that people associate with giraffes, horses, cats, and dogs.\n\n\nSanborn, A. N., Griffiths, T. L., \n Shiffrin, R. M. (2010). Uncovering mental representations with Markov chain Monte Carlo. \nCognitive Psychology\n, 60(2), 63-106.\n\n\nDownload the demo\n.", 
             "title": "Markov Chain Monte Carlo with people"
         }, 
         {
@@ -242,7 +242,7 @@
         }, 
         {
             "location": "/demos/rogers/", 
-            "text": "This is the readme for the Wallace demo Rogers. It explores the evolution of asocial learning and unguided social learning in the context of a numerical discrimination task.", 
+            "text": "This experiment, which demonstrates Rogers paradox, explores the evolution of asocial learning and unguided social learning in the context of a numerical discrimination task.\n\n\nDownload the demo\n.", 
             "title": "Rogers paradox"
         }, 
         {
