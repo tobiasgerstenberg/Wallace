@@ -37,9 +37,9 @@
             <p>The classes involved in a Wallace experiment are: <a href="./#network">Network</a>, <a href="./#node">Node</a>, <a href="./#vector">Vector</a>, <a href="./#info">Info</a>, <a href="./#transmission">Transmission</a>, <a href="./#transformation">Transformation</a>, <a href="./#participant">Participant</a> and <a href="./#question">Question</a>. The code for all these classes can be seen in <code>models.py</code>. Each class has a corresponding table in the database, with each instance stored as a row in the table. Accordingly, each class is defined, in part, by the columns that constitute the table it is stored in. In addition, the classes have relationships to other objects and a number of functions.</p>
 <p>The classes have relationships to each other as shown in the diagram below. Be careful to note which way the arrows point. A <code>Node</code> is a point in a <code>Network</code> that might be associated with a <code>Participant</code>. A <code>Vector</code> is a directional connection between a <code>Node</code> and another <code>Node</code>. An <code>Info</code> is information created by a <code>Node</code>. A <code>Transmission</code> is an instance of an <code>Info</code> being sent along a <code>Vector</code>. A <code>Transformation</code> is a relationship between an <code>Info</code> and another <code>Info</code>. A <code>Question</code> is a survey response created by a <code>Participant</code>.</p>
 <p><img alt="" src="../images/class_chart.jpg" /></p>
-<h1 id="network">Network</h1>
+<h2 id="network">Network</h2>
 <p>The <code>Network</code> object can be imagined as a set of other objects with some functions that perform operations over those objects. The objects that <code>Network</code>s have direct access to are all the <code>Node</code>s in the network, the <code>Vector</code>s between those Nodes, Infos created by those Nodes, Transmissions sent along the Vectors by those Nodes and Transformations of those Infos. Participants and Questions do not exist within Networks. An experiment may involve multiple Networks, Transmissions can only occur within networks, not between them.</p>
-<h2 id="columns">Columns</h2>
+<h3 id="columns">Columns</h3>
 <ul>
 <li><code>id</code> - a unique number for every entry. 1, 2, 3 and so on...</li>
 <li><code>creation_time</code> - the time at which the Network was created.</li>
@@ -52,7 +52,7 @@
 <li><code>full</code> - a boolean indicating whether the network has reached its max_size.</li>
 <li><code>role</code> - a String identifying the purpose of the Network. Any value can be used, but by default Wallace treats Networks with a role of "practice" differently.</li>
 </ul>
-<h2 id="relationships">Relationships</h2>
+<h3 id="relationships">Relationships</h3>
 <ul>
 <li><code>all_nodes</code> - all the Nodes in the network. </li>
 <li><code>all_vectors</code> - all the Vectors in the network.</li>
@@ -60,7 +60,7 @@
 <li><code>networks_transmissions</code> - all the Transmissions in the network.</li>
 <li><code>networks_transformations</code> - all the Transformations in the network.</li>
 </ul>
-<h2 id="functions">Functions</h2>
+<h3 id="functions">Functions</h3>
 <p><code>Network.__repr__()</code> <br />
 Return a simple string representation of the network.</p>
 <p><code>Network.__json__()</code> <br />
@@ -392,8 +392,9 @@ Set question.failed to True and question.time_of_death to now.</p>
     
   </ul>
     
-      <li><a href="#node">Node</a></li>
-      <ul>
+  </ul>
+  
+    <ul>
     
       <li><a href="#columns_1">Columns</a></li>
       <ul>
@@ -411,9 +412,8 @@ Set question.failed to True and question.time_of_death to now.</p>
   </ul>
     
   </ul>
-    
-      <li><a href="#vector">Vector</a></li>
-      <ul>
+  
+    <ul>
     
       <li><a href="#columns_2">Columns</a></li>
       <ul>
@@ -431,9 +431,8 @@ Set question.failed to True and question.time_of_death to now.</p>
   </ul>
     
   </ul>
-    
-      <li><a href="#info">Info</a></li>
-      <ul>
+  
+    <ul>
     
       <li><a href="#columns_3">Columns</a></li>
       <ul>
@@ -451,9 +450,8 @@ Set question.failed to True and question.time_of_death to now.</p>
   </ul>
     
   </ul>
-    
-      <li><a href="#transmission">Transmission</a></li>
-      <ul>
+  
+    <ul>
     
       <li><a href="#columns_4">Columns</a></li>
       <ul>
@@ -471,9 +469,8 @@ Set question.failed to True and question.time_of_death to now.</p>
   </ul>
     
   </ul>
-    
-      <li><a href="#transformation">Transformation</a></li>
-      <ul>
+  
+    <ul>
     
       <li><a href="#columns_5">Columns</a></li>
       <ul>
@@ -486,9 +483,8 @@ Set question.failed to True and question.time_of_death to now.</p>
   </ul>
     
   </ul>
-    
-      <li><a href="#participant">Participant</a></li>
-      <ul>
+  
+    <ul>
     
       <li><a href="#columns_6">Columns</a></li>
       <ul>
@@ -506,9 +502,8 @@ Set question.failed to True and question.time_of_death to now.</p>
   </ul>
     
   </ul>
-    
-      <li><a href="#question">Question</a></li>
-      <ul>
+  
+    <ul>
     
       <li><a href="#columns_7">Columns</a></li>
       <ul>
@@ -522,8 +517,6 @@ Set question.failed to True and question.time_of_death to now.</p>
     
       <li><a href="#methods_5">Methods</a></li>
       <ul>
-    
-  </ul>
     
   </ul>
     
@@ -579,7 +572,7 @@ Set question.failed to True and question.time_of_death to now.</p>
 
   <!--
   MkDocs version      : 0.15.3
-  Docs Build Date UTC : 2016-08-09 02:22:23.782901
+  Docs Build Date UTC : 2016-08-09 02:23:52.825314
   -->
 </body>
 </html>
