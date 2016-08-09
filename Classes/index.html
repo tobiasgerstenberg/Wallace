@@ -37,7 +37,7 @@
             <p>The classes involved in a Wallace experiment are: <a href="./#network">Network</a>, <a href="./#node">Node</a>, <a href="./#vector">Vector</a>, <a href="./#info">Info</a>, <a href="./#transmission">Transmission</a>, <a href="./#transformation">Transformation</a>, <a href="./#participant">Participant</a> and <a href="./#question">Question</a>. The code for all these classes can be seen in <code>models.py</code>. Each class has a corresponding table in the database, with each instance stored as a row in the table. Accordingly, each class is defined, in part, by the columns that constitute the table it is stored in. In addition, the classes have relationships to other objects and a number of functions.</p>
 <p>The classes have relationships to each other as shown in the diagram below. Be careful to note which way the arrows point. A <code>Node</code> is a point in a <code>Network</code> that might be associated with a <code>Participant</code>. A <code>Vector</code> is a directional connection between a <code>Node</code> and another <code>Node</code>. An <code>Info</code> is information created by a <code>Node</code>. A <code>Transmission</code> is an instance of an <code>Info</code> being sent along a <code>Vector</code>. A <code>Transformation</code> is a relationship between an <code>Info</code> and another <code>Info</code>. A <code>Question</code> is a survey response created by a <code>Participant</code>.</p>
 <p><img alt="" src="../images/class_chart.jpg" /></p>
-<h3 id="network">Network</h3>
+<h1 id="network">Network</h1>
 <p>The <code>Network</code> object can be imagined as a set of other objects with some functions that perform operations over those objects. The objects that <code>Network</code>s have direct access to are all the <code>Node</code>s in the network, the <code>Vector</code>s between those Nodes, Infos created by those Nodes, Transmissions sent along the Vectors by those Nodes and Transformations of those Infos. Participants and Questions do not exist within Networks. An experiment may involve multiple Networks, Transmissions can only occur within networks, not between them.</p>
 <h4 id="columns">Columns</h4>
 <ul>
@@ -85,7 +85,7 @@ Return a list of transformations in the network (i.e., transformations by nodes 
 Return a list of transmissions in the network. <em>status</em> can be "pending" or "received" (default is "all"). By default failed transmissions are excluded, to include only failed transmissions use <em>failed=True</em>, for all transmissions use <em>failed="all"</em>.</p>
 <p><code>Network.vectors([failed])</code> <br />
 Return a list of vectors in the network. By default failed vectors are excluded, to include only failed vectors use <em>failed=True</em>, for all vectors use <em>failed="all"</em>.</p>
-<h3 id="node">Node</h3>
+<h1 id="node">Node</h1>
 <p>Each Node represents a single point in a single network. A Node must be within a Network and may also be associated with a Participant.</p>
 <h4 id="columns_1">Columns</h4>
 <ul>
@@ -147,7 +147,7 @@ Return a (list of) newly created transmission(s) of <em>what</em> to <em>to_whom
 Process received infos, called by node.receive(). By default this method does nothing. It is intended to be overwritten to provide subclasses of node new behaviors that occur automatically when they receive transmissions.</p>
 <p><code>Node.vectors([direction, failed])</code> <br />
 Return a list of vectors connected to the node. Direction specfies whether to include vectors that originate from or arrive at the node. It defaults to "all", but can also be "incoming" or "outgoing". By default failed vectors are excluded, to include only failed vectors use <em>failed=True</em>, for all vectors use <em>failed="all"</em>.</p>
-<h3 id="vector">Vector</h3>
+<h1 id="vector">Vector</h1>
 <p>A vector is a directional link between two nodes. Nodes connected by a vector can send Transmissions to each other, but because Vectors have a direction, two Vectors are needed for bi-directional Transmissions.</p>
 <h4 id="columns_2">Columns</h4>
 <ul>
@@ -178,7 +178,7 @@ Return a JSON object with all the attributes of the vector.</p>
 Set vector.failed to True and vector.time_of_death to now. Instruct all transmissions sent along this vector to fail.</p>
 <p><code>Vector.transmissions([status])</code> <br />
 Return a list of transmissions sent along the vector. <em>Status</em> can be "pending", "received", or "all" (default is "all").</p>
-<h3 id="info">Info</h3>
+<h1 id="info">Info</h1>
 <p>An Info is a piece of information created by a Node. It can be sent along Vectors as part of a Transmission.</p>
 <h4 id="columns_3">Columns</h4>
 <ul>
@@ -214,7 +214,7 @@ Set info.failed to True and info.time_of_death to now. Instruct all transmission
 Return a list of transformations involving this info. <em>Relationship</em> can be "parent" (in which case only transformations where the info is the <em>info_in</em> are returned), "child" (in which case only transformations where the info is the <em>info_out</em> are returned) or "all" (in which case any transformations where the info is the <em>info_out</em> or the <em>info_in</em> are returned). The default is "all"</p>
 <p><code>Info.transmissions([status])</code>
 Return a list of transmissions of this info. <em>Status</em> can be "pending", "received", or "all" (default is "all").</p>
-<h3 id="transmission">Transmission</h3>
+<h1 id="transmission">Transmission</h1>
 <p>A transmission represents an instance of an Info being sent along a Vector. Transmissions are not necessarily received when they are sent (like an email) and must also be received by the Node they are sent to.</p>
 <h4 id="columns_4">Columns</h4>
 <ul>
@@ -254,7 +254,7 @@ Return a JSON object with all the attributes of the transmission.</p>
 Set transmission.failed to True and transmission.time_of_death to now.</p>
 <p><code>Transmission.mark_received()</code> <br />
 Set transmission.status to "received" and transmission.receive_time to now.</p>
-<h3 id="transformation">Transformation</h3>
+<h1 id="transformation">Transformation</h1>
 <p>A Transformation is a relationship between two Infos. It is similar to how a Vector indicates a relationship between two Nodes, but whereas a Vector allows Nodes to Transmit to each other, Transformations don't allow Infos to do anything new. Instead they are a form of book-keeping allowing you to keep track of relationships between various Infos.</p>
 <h4 id="columns_5">Columns</h4>
 <ul>
@@ -283,7 +283,7 @@ Return a simple string representation of the transformation.</p>
 Return a JSON object with all the attributes of the transformation.</p>
 <p><code>Transformation.fail()</code> <br />
 Set transformation.failed to True and transformation.time_of_death to now.</p>
-<h3 id="participant">Participant</h3>
+<h1 id="participant">Participant</h1>
 <p>The Participant object corresponds to a real world participant. Each person who takes part will have a corresponding entry in the Participant table. Participants can be associated with Nodes and Questions.</p>
 <h4 id="columns_6">Columns</h4>
 <ul>
@@ -331,7 +331,7 @@ Return a list of infos produced by nodes associated with the participant. If spe
 Return a list of nodes associated with the participant. If specified, <code>type</code> filters by class. By default failed nodes are excluded, to include only failed nodes use <em>failed=True</em>, for all nodes use <em>failed="all"</em>.</p>
 <p><code>Participant.questions</code>([<code>type</code>]) <br />
 Return a list of questions associated with the participant. If specified, <code>type</code> filters by class.</p>
-<h3 id="question">Question</h3>
+<h1 id="question">Question</h1>
 <p>A Question is a way to store information associated with a Participant as opposed to a Node (Infos are made by Nodes, not Participants). Questions are generally useful for storing responses debriefing questions etc.</p>
 <h4 id="columns_7">Columns</h4>
 <ul>
@@ -572,7 +572,7 @@ Set question.failed to True and question.time_of_death to now.</p>
 
   <!--
   MkDocs version      : 0.15.3
-  Docs Build Date UTC : 2016-08-09 02:15:25.772011
+  Docs Build Date UTC : 2016-08-09 02:16:28.949713
   -->
 </body>
 </html>
