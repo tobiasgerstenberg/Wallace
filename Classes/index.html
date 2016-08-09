@@ -198,8 +198,8 @@ Return a list of transmissions sent along the vector. <code>status</code> can be
 <li><code>origin</code> - the Node that created the info.</li>
 <li><code>network</code> - the network the info is in.</li>
 <li><code>all_transmissions</code> - all Transmissions of this Info.</li>
-<li><code>transformation_applied_to</code> - all Transformations of which this info is the info_in</li>
-<li><code>transformation_whence</code> - all Transformations of which this info is the info_out</li>
+<li><code>transformation_applied_to</code> - all Transformations of which this info is the <code>info_in</code></li>
+<li><code>transformation_whence</code> - all Transformations of which this info is the <code>info_out</code></li>
 </ul>
 <h3 id="methods_2">Methods</h3>
 <p><code>Info.__repr__()</code> <br />
@@ -324,12 +324,12 @@ Set transformation.failed to True and transformation.time_of_death to now.</p>
 <p><code>Participant.__json__()</code> <br />
 Return a JSON object with all the attributes of the participant.</p>
 <p><code>Participant.fail()</code> <br />
-Set participant.failed to True and participant.time_of_death to now. Instruct all not-failed nodes associated with the participant to fail.</p>
-<p><code>Participant.infos</code>([<code>type</code>, <code>failed</code>]) <br />
+Set <code>Participant.failed</code> to <code>True</code> and <code>Participant.time_of_death</code> to now. Instruct all not-failed nodes associated with the participant to fail.</p>
+<p><code>Participant.infos([type, failed])</code> <br />
 Return a list of infos produced by nodes associated with the participant. If specified, <code>type</code> filters by class. By default, failed infos are excluded, to include only failed nodes use <code>failed=True</code>, for all nodes use <code>failed=all</code>. Note that failed filters the infos, not the nodes - infos from all nodes (whether failed or not) can be returned.</p>
-<p><code>Participant.nodes</code>([<code>type</code>, <code>failed</code>]) <br />
+<p><code>Participant.nodes([type, failed])</code> <br />
 Return a list of nodes associated with the participant. If specified, <code>type</code> filters by class. By default failed nodes are excluded, to include only failed nodes use <code>failed=True</code>, for all nodes use <code>failed=all</code>.</p>
-<p><code>Participant.questions</code>([<code>type</code>]) <br />
+<p><code>Participant.questions([type])</code><br />
 Return a list of questions associated with the participant. If specified, <code>type</code> filters by class.</p>
 <h2 id="question">Question</h2>
 <p>A Question is a way to store information associated with a Participant as opposed to a Node (Infos are made by Nodes, not Participants). Questions are generally useful for storing responses debriefing questions etc.</p>
@@ -572,7 +572,7 @@ Set question.failed to True and question.time_of_death to now.</p>
 
   <!--
   MkDocs version      : 0.15.3
-  Docs Build Date UTC : 2016-08-09 02:30:49.665747
+  Docs Build Date UTC : 2016-08-09 02:44:56.713763
   -->
 </body>
 </html>
