@@ -95,12 +95,16 @@ For example, to transmit all infos of type Meme to the node with id 10:</p>
 Returns a list of json descriptions of vectors connected to the node as <code>vectors</code>. Vectors are identified by calling <code>node.vectors()</code>. <em>direction</em> and <em>failed</em> can be passed as data and will be forwarded as arguments. Requesting node and list of vectors are also passed to experiment method <code>vector_get_request(node, vectors)</code>. </p>
 <p><strong>/node/\<participant_id></strong> [post] <br />
 Create a node for the specified participant. The route calls the following experiment methods: <code>get_network_for_participant(participant)</code>, <code>create_node(network, participant)</code>, <code>add_node_to_network(node, network)</code>, and <code>node_post_request(participant, node)</code>. Returns a json description of the created node as <code>node</code>.</p>
+<p><strong>/notifications</strong> [post/get] <br />
+This is the route to which notifications from AWS are sent. It is also possible to send your own notifications to this route, thereby simulating notifications from AWS. Necessary arguments are <em>Event.1.EventType</em> which can be AssignmentAccepted, AssignmentAbandoned, AssignmentReturned or AssignmentSubmitted and <em>Event.1.AssignmentId</em> which is the id of the relevant assignment. In addition, Wallace uses a custom EventType of NotificationMissing.</p>
 <p><strong>/participant/\<participant_id></strong> [get] <br />
 Returns a json description of the requested participant as <code>participant</code>.</p>
 <p><strong>/participant/\<worker_id>/\<hit_id>/\<assignment_id>/\<mode></strong> [post] <br />
 Create a participant. Returns a json description of the participant as <code>participant</code>.</p>
 <p><strong>/question/\<participant_id></strong> [post] <br />
 Create a question. <em>question</em>, <em>response</em> and <em>question_id</em> should be passed as data. Does not return anything.</p>
+<p><strong>/transformation/\<int:node_id>/\<int:info_in_id>/\<int:info_out_id></strong> [post] 
+Create a transformation from <em>info_in</em> to <em>info_out</em> at the specified node. <em>transformation_type</em> can be passed as data and the transformation will be of that class if it is a known class. Returns a json description of the created transformation.</p>
             
           
         </div>
@@ -181,7 +185,7 @@ Create a question. <em>question</em>, <em>response</em> and <em>question_id</em>
 
   <!--
   MkDocs version      : 0.15.3
-  Docs Build Date UTC : 2016-08-09 01:02:13.659214
+  Docs Build Date UTC : 2016-08-09 01:24:34.995332
   -->
 </body>
 </html>
