@@ -49,6 +49,15 @@
 <p>If you have Python 3.<em>x</em> installed and and symlinked to the command <code>python</code>, you will need to create a <code>virtualenv</code> that interprets the code as <code>python2.7</code> (for compatibility with the <code>psiturk</code> module). Fortunately, we will be creating a virtual environment anyway, so as long as you run <code>brew install python</code> and you don't run into any errors because of your symlinks, then you can proceed with the instructions. If you do run into any errors, good luck, we're rooting for you. </p>
 <h2 id="install-postgres">Install Postgres</h2>
 <p>On OS X, we recommend installing <a href="http://postgresapp.com">Postgres.app</a> to start and stop a Postgres server.</p>
+<p>You will then need to add Postgres to your PATH environmental variable. If you use the default location for installing applications on OS X (namely <code>/Applications</code>), you can adjust your path by running the following command:</p>
+<pre><code>export PATH=&quot;/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH&quot;
+</code></pre>
+
+<p>NB: If you have installed a more recent version of Postgres (e.g., the <a href="https://github.com/PostgresApp/PostgresApp/releases/tag/9.4rc1">the upcoming version 9.4</a>), you may need to alter that command slightly to accommodate the more recent version number. To double check which version to include, then run:    </p>
+<pre><code>ls /Applications/Postgres.app/Contents/Versions/
+</code></pre>
+
+<p>Whatever number that returns is the version number that you should place in the <code>export</code> command above. If it does not return a number, you have not installed Postgres correctly in your <code>/Applications</code> folder or something else is horribly wrong.</p>
 <p>On Ubuntu, follow the instructions under the heading "Installation" <a href="https://help.ubuntu.com/community/PostgreSQL">here</a>. </p>
 <h2 id="create-the-database">Create the Database</h2>
 <p>After installing Postgres, you will need to create a database for your experiments to use. Run the following command from the comand line:</p>
@@ -197,7 +206,7 @@ workon wallace
 
   <!--
   MkDocs version      : 0.15.3
-  Docs Build Date UTC : 2016-08-09 05:48:14.054538
+  Docs Build Date UTC : 2016-08-09 17:05:03.917850
   -->
 </body>
 </html>
