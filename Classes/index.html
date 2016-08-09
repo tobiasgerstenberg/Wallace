@@ -64,7 +64,7 @@
 <p><code>Network.__repr__()</code> <br />
 Return a simple string representation of the network.</p>
 <p><code>Network.__json__()</code> <br />
-Return a json object with all the attributes of the network.</p>
+Return a JSON object with all the attributes of the network.</p>
 <p><code>Network.calculate_full()</code> <br />
 Update attribute network.full to reflect current network size.</p>
 <p><code>Network.fail()</code> <br />
@@ -114,7 +114,7 @@ Return a list of vectors in the network. By default failed vectors are excluded,
 <p>node.<code>__repr__()</code> <br />
 Return a simple string representation of the node.</p>
 <p>node<code>.__json__()</code> <br />
-Return a json object with all the attributes of the node.</p>
+Return a JSON object with all the attributes of the node.</p>
 <p>node.<code>_to_whom()</code> <br />
 Return the default value of <em>to_whom</em> for node.transmit(). Should not return None or a list containing None.</p>
 <p>node.<code>_what()</code> <br />
@@ -173,7 +173,7 @@ Return a list of vectors connected to the node. Direction specfies whether to in
 <p>vector.<code>__repr__()</code> <br />
 Return a simple string representation of the vector.</p>
 <p>vector<code>.__json__()</code> <br />
-Return a json object with all the attributes of the vector.</p>
+Return a JSON object with all the attributes of the vector.</p>
 <p>vector<code>.fail()</code> <br />
 Set vector.failed to True and vector.time_of_death to now. Instruct all transmissions sent along this vector to fail.</p>
 <p>vector<code>.transmissions</code>([<em>status</em>]) <br />
@@ -205,7 +205,7 @@ Return a list of transmissions sent along the vector. <em>Status</em> can be "pe
 <p>info.<code>__repr__()</code> <br />
 Return a simple string representation of the info.</p>
 <p>info.<code>__json__()</code> <br />
-Return a json object with all the attributes of the info.</p>
+Return a JSON object with all the attributes of the info.</p>
 <p>info.<code>_mutated_contents()</code> <br />
 Return a string that will be the contents of an info created via a mutation of this info.</p>
 <p>info<code>.fail()</code> <br />
@@ -249,7 +249,7 @@ Return a list of transmissions of this info. <em>Status</em> can be "pending", "
 <p>transmission.<code>__repr__()</code> <br />
 Return a simple string representation of the transmission.</p>
 <p>transmission.<code>__json__()</code> <br />
-Return a json object with all the attributes of the transmission.</p>
+Return a JSON object with all the attributes of the transmission.</p>
 <p>transmission.<code>fail()</code> <br />
 Set transmission.failed to True and transmission.time_of_death to now.</p>
 <p>transmission.<code>mark_received()</code> <br />
@@ -280,7 +280,7 @@ Set transmission.status to "received" and transmission.receive_time to now.</p>
 <p>transformation.<code>__repr__()</code> <br />
 Return a simple string representation of the transformation.</p>
 <p>transformation.<code>__json__()</code> <br />
-Return a json object with all the attributes of the transformation.</p>
+Return a JSON object with all the attributes of the transformation.</p>
 <p>transformation.<code>fail()</code> <br />
 Set transformation.failed to True and transformation.time_of_death to now.</p>
 <h3 id="participant">Participant</h3>
@@ -322,7 +322,7 @@ Set transformation.failed to True and transformation.time_of_death to now.</p>
 </ul>
 <h4 id="methods_4">Methods</h4>
 <p>participant<code>.__json__()</code> <br />
-Return a json object with all the attributes of the participant.</p>
+Return a JSON object with all the attributes of the participant.</p>
 <p>participant<code>.fail()</code> <br />
 Set participant.failed to True and participant.time_of_death to now. Instruct all not-failed nodes associated with the participant to fail.</p>
 <p>participant.<code>infos</code>([<em>type</em>, <em>failed</em>]) <br />
@@ -572,7 +572,7 @@ Set question.failed to True and question.time_of_death to now.</p>
 
   <!--
   MkDocs version      : 0.15.3
-  Docs Build Date UTC : 2016-08-09 01:59:36.717985
+  Docs Build Date UTC : 2016-08-09 02:01:13.897499
   -->
 </body>
 </html>
